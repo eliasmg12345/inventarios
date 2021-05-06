@@ -29,14 +29,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Nombre completo</label>
-                                            <input type="text" class="form-control"  placeholder="John doe">
+                                            <input type="text" class="form-control" [(ngModel)]="pacientes.nompaciente" placeholder="John doe">
                                         </div>
                                     </div>
                                     <!--/span-->
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Edad</label>
-                                            <input type="text" class="form-control"  placeholder="31 años">
+                                            <input type="text" class="form-control" [(ngModel)]="pacientes.edadpaciente"  placeholder="31 años">
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -46,14 +46,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Teléfono</label>
-                                            <input type="text"  class="form-control"  placeholder="(999) 999-9999">
+                                            <input type="text"  class="form-control" [(ngModel)]="pacientes.telpaciente" placeholder="(999) 999-9999">
                                         </div>
                                     </div>
                                     <!--/span-->
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Dirección</label>
-                                            <input type="text" class="form-control"  placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
+                                            <input type="text" class="form-control" name="pacientes.dirpaciente" [(ngModel)]="pacientes.dirpaciente" placeholder="Av">
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -61,7 +61,7 @@
                                 <!--/row-->                                        
                             </div>
                             <div class="form-actions">
-                                <button  class="btn btn-success"> <i class="fa fa-check"></i> Guardar </button> 
+                                <button  class="btn btn-success" (click)="AltaPaciente()"> <i class="fa fa-check"></i> Guardar </button> 
                             </div>
                     </div>
                 </div>
