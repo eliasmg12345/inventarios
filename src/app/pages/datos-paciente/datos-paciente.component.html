@@ -36,12 +36,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Brenda</td>
-                                        <td>27 años</td>
-                                        <td>7120023451</td>
-                                        <td>Veracruz</td>
+                                    <tr *ngFor="let datos of pacientes">
+                                        <td>{{datos.idpaciente}}</td>
+                                        <td>{{datos.nompaciente}}</td>
+                                        <td>{{datos.edadpaciente}}</td>
+                                        <td>{{datos.telpaciente}}</td>
+                                        <td>{{datos.dirpaciente}}</td>
                                         <td> 
                                             <a class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>

@@ -12,9 +12,7 @@ export class CrearPacienteComponent {
 
   pacientes:any={};
 
-  constructor(private pacientesServices:PacientesService, private router:Router) {
-    
-   }
+  constructor(private pacientesServices:PacientesService, private router:Router) {}
 
    AltaPaciente(){
 
@@ -27,44 +25,42 @@ export class CrearPacienteComponent {
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
+      title: 'Desea registrar?',
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText: 'Aceptar!',
+      cancelButtonText: 'Cancelar',
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+
+        this.pacientesServices.altaPaciente(this.pacientes).subscribe(resp=>{
+          if(resp['resultado']==='OK'){
+
+
+
+          swalWithBootstrapButtons.fire(
+            'Registrado!',
+            'Articulo registradp.',
+            'success'
+          )
+          this.router.navigate(['nuevo-historial']);
+        }
+      });
+
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalWithBootstrapButtons.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
+          'Cancelado',
+          'xxxx',
           'error'
         )
       }
     })
 
-
-
-    
-/*
-     this.pacientesServices.altaPaciente(this.pacientes).subscribe(resp=>{
-       if(resp['resultado']==='OK'){
-         console.log('exitoso');
-         this.router.navigate(['nuevo-historial']);
-       }
-     });
-
-*/
    }
 
 }
