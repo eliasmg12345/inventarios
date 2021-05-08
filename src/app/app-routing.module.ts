@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CrearPacienteComponent } from './pages/crear-paciente/crear-paciente.component';
 import { DatosPacienteComponent } from './pages/datos-paciente/datos-paciente.component';
 import { HistorialPacienteComponent } from './pages/historial-paciente/historial-paciente.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NuevoHistorialComponent } from './pages/nuevo-historial/nuevo-historial.component';
 
 const routes: Routes = [
@@ -11,9 +12,10 @@ const routes: Routes = [
   {path:'datos-paciente',component:DatosPacienteComponent},
   {path:'historial-paciente',component:HistorialPacienteComponent},
   {path:'nuevo-historial',component:NuevoHistorialComponent},
-  {path:'**',redirectTo:'crear-paciente'}
+  {path:'login',component:LoginComponent},
+  {path:'**',redirectTo:'login'}
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

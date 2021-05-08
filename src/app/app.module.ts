@@ -12,6 +12,9 @@ import { NuevoHistorialComponent } from './pages/nuevo-historial/nuevo-historial
 import { HistorialPacienteComponent } from './pages/historial-paciente/historial-paciente.component';
 import { ExpedienteComponent } from './pages/expediente/expediente.component';
 
+import {LoginServiceService} from './services/login-service.service';
+import { LoginComponent } from './pages/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { ExpedienteComponent } from './pages/expediente/expediente.component';
     DatosPacienteComponent,
     NuevoHistorialComponent,
     HistorialPacienteComponent,
-    ExpedienteComponent
+    ExpedienteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { ExpedienteComponent } from './pages/expediente/expediente.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    LoginServiceService
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

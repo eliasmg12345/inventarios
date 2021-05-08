@@ -21,4 +21,5 @@ export class PacientesService {
   getPaciente(){
     return this.http.get(`${this.URL}ObtenerPacientes.php`);
   }
+
 }
