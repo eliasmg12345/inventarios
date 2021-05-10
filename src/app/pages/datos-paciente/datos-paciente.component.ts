@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PacientesService } from 'src/app/services/pacientes.service';
 import {Pacientes} from '../../interfaces/usuarios.interface';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/src/sweetalert2.js';
 
 @Component({
   selector: 'app-datos-paciente',

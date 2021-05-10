@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrearPacienteComponent } from './pages/crear-paciente/crear-paciente.component';
 import { DatosPacienteComponent } from './pages/datos-paciente/datos-paciente.component';
+import { ExpedienteComponent } from './pages/expediente/expediente.component';
 import { HistorialPacienteComponent } from './pages/historial-paciente/historial-paciente.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NuevoHistorialComponent } from './pages/nuevo-historial/nuevo-historial.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'historial-paciente',component:HistorialPacienteComponent},
   {path:'nuevo-historial',component:NuevoHistorialComponent},
   {path:'login',component:LoginComponent},
+  {path:'expediente/:id',component:ExpedienteComponent},
   {path:'',pathMatch:'full',redirectTo:'informacion'},
   {path:'**',redirectTo:'login'}
 ];

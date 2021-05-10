@@ -30,10 +30,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <td>Brenda</td>                                                                                        
+                    <tr *ngFor="let hist of newhistoriales" >
+                        <td>{{hist.nompaciente}}</td>                                                                                        
                         <td> 
-                            <a class="btn btn-success" ><i class="fa fa-eye"></i></a>
+                            <a (click)="VerExp(hist.idpaciente)" class="btn btn-success" ><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>                                        
                 </tbody>

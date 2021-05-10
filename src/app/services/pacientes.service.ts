@@ -37,4 +37,22 @@ export class PacientesService {
   eliminarPaciente(idpaciente){
     return this.http.get(`${this.URL}EliminarPaciente.php?idpaciente=${idpaciente}`);
   }
+
+
+
+
+
+
+
+  
+  //Nuevo Historial
+  altaHistorial(newHistorial){
+    // a;adiendo las backtics
+    return this.http.post(`${this.URL}NuevoHistorial.php`,JSON.stringify(newHistorial));
+  }
+
+  // Obtener historiales
+  getHistorial(){
+    return this.http.get(`${this.URL}ObtenerHistoriales.php`);
+  }
 }
