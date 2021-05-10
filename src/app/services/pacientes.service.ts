@@ -22,4 +22,19 @@ export class PacientesService {
     return this.http.get(`${this.URL}ObtenerPacientes.php`);
   }
 
+
+  // seleccionar paciente del boton editar
+  seleccionarPaciente(idpaciente:number){
+    return this.http.get(`${this.URL}SeleccionarPaciente.php?idpaciente=${idpaciente}`);
+  }
+
+  // editar pacientes
+  editarPaciente(pacientes){
+    return this.http.post(`${this.URL}EditarPaciente.php`,JSON.stringify(pacientes));
+  }
+
+  // Eliminar paciente
+  eliminarPaciente(idpaciente){
+    return this.http.get(`${this.URL}EliminarPaciente.php?idpaciente=${idpaciente}`);
+  }
 }

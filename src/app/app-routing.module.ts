@@ -13,6 +13,7 @@ const routes: Routes = [
   {path:'historial-paciente',component:HistorialPacienteComponent},
   {path:'nuevo-historial',component:NuevoHistorialComponent},
   {path:'login',component:LoginComponent},
+  {path:'',pathMatch:'full',redirectTo:'informacion'},
   {path:'**',redirectTo:'login'}
 ];
  
