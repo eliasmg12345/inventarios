@@ -55,4 +55,22 @@ export class PacientesService {
   getHistorial(){
     return this.http.get(`${this.URL}ObtenerHistoriales.php`);
   }
+
+
+
+  //Obtener expediente
+  getExpedientes(idpaciente){
+    return this.http.get(`${this.URL}ObtenerExpedientes.php?idpaciente=${idpaciente}`);
+  }
+
+  // Seleccionar expediente
+  seleccionarExpediente(idhistorial:number){
+    return this.http.get(`${this.URL}SeleccionarExpediente.php?idhistorial=${idhistorial}`);
+  }
+  
+
+  // Editar EXPEDIENTE
+  editarExpediente(expediente){
+    return this.http.post(`${this.URL}EditarExpediente.php`,JSON.stringify(expediente));
+  }
 }

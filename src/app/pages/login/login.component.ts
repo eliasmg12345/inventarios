@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginServiceService} from '../../services/login-service.service';
-import {Router} from '@angular/router';
+import { LoginServiceService } from '../../services/login-service.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 
@@ -11,26 +11,26 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 })
 export class LoginComponent implements OnInit {
 
-  login={
-    usuario:null, 
-    password:null
+  login = {
+    usuario: null,
+    password: null
   }
 
 
-  constructor(private loginService:LoginServiceService,private router:Router) { }
+  constructor(private loginService: LoginServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  loginUsuario(){
-    this.loginService.loginUsuario(this.login).subscribe(datos=>{
-      if(datos['resultado']==='OK'){
-        
+  loginUsuario() {
+    this.loginService.loginUsuario(this.login).subscribe(datos => {
+      if (datos['resultado'] === 'OK') {
+
         console.log(datos['mensaje']);
         this.router.navigate(['crear-paciente']);
         console.log('LIKEEEEE');
 
-      }else{
+      } else {
         console.log(datos['mensaje']);
         console.log('sd');
       }
