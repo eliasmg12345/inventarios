@@ -14,6 +14,11 @@ export class HistorialPacienteComponent implements OnInit {
 
   newhistoriales:Pacientes[];
 
+
+ filtrarNombre:any='';
+
+ PaginaActual:number=1;
+
   constructor(private pacientesService:PacientesService,private route:Router) { }
 
   ngOnInit(): void {

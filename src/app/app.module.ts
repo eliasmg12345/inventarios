@@ -14,6 +14,9 @@ import { ExpedienteComponent } from './pages/expediente/expediente.component';
 
 import {LoginServiceService} from './services/login-service.service';
 import { LoginComponent } from './pages/login/login.component';
+import { FiltrartablaPipe } from './pipes/filtrartabla.pipe';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { LoginComponent } from './pages/login/login.component';
     NuevoHistorialComponent,
     HistorialPacienteComponent,
     ExpedienteComponent,
-    LoginComponent
+    LoginComponent,
+    FiltrartablaPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [
     LoginServiceService

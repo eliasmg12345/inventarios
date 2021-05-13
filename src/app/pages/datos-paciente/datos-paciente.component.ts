@@ -15,6 +15,13 @@ export class DatosPacienteComponent implements OnInit {
 
   paciente:any={};
 
+
+  //PIPE filtrarTabla
+  filtrarNombre:any='';
+
+
+  p:number=1;
+
   constructor(public pacientesService:PacientesService) { }
 
   ngOnInit(): void {

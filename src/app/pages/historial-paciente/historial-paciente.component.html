@@ -11,7 +11,7 @@
                 <h3 class="text-themecolor">Historial de registros </h3>
             </div>
             <div class="col-md-4 align-self-center">
-                <input id="demo-input-search2" type="text"  placeholder="Buscar por nombre" autocomplete="off">
+                <input id="demo-input-search2" name="filtrarNombre" [(ngModel)]="filtrarNombre" type="text"  placeholder="Buscar por nombre" autocomplete="off">
             </div>
         </div>
         <!-- ============================================================== -->
@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let hist of newhistoriales" >
+                    <tr *ngFor="let hist of newhistoriales |filtrartabla:filtrarNombre | paginate: { itemsPerPage: 5, currentPage: PaginaActual }" >
                         <td>{{hist.nompaciente}}</td>                                                                                        
                         <td> 
                             <a (click)="VerExp(hist.idpaciente)" class="btn btn-success" ><i class="fa fa-eye"></i></a>
@@ -38,6 +38,8 @@
                     </tr>                                        
                 </tbody>
             </table>
+            <pagination-controls (pageChange)="PaginaActual = $event"></pagination-controls>
+
         </div>                     
     </div>
     <!-- ============================================================== -->
