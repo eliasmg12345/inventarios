@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       if (datos['resultado'] === 'OK') {
 
         console.log(datos['mensaje']);
-        this.router.navigate(['crear-paciente']);
+        this.router.navigate(['ingreso-articulos']);
         console.log('LIKEEEEE');
 
       } else {

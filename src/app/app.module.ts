@@ -6,29 +6,37 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/header/header.component';
-import { CrearPacienteComponent } from './pages/crear-paciente/crear-paciente.component';
-import { DatosPacienteComponent } from './pages/datos-paciente/datos-paciente.component';
-import { NuevoHistorialComponent } from './pages/nuevo-historial/nuevo-historial.component';
-import { HistorialPacienteComponent } from './pages/historial-paciente/historial-paciente.component';
-import { ExpedienteComponent } from './pages/expediente/expediente.component';
+
 
 import {LoginServiceService} from './services/login-service.service';
 import { LoginComponent } from './pages/login/login.component';
 import { FiltrartablaPipe } from './pipes/filtrartabla.pipe';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-articulo.component';
+import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
+import { MovimientoArticuloComponent } from './pages/movimiento-articulo/movimiento-articulo.component';
+import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
+import { AdministracionArticulosComponent } from './pages/administracion-articulos/administracion-articulos.component';
+import { AgregarArticulosComponent } from './pages/agregar-articulos/agregar-articulos.component';
+import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
+import { AgregarOficinasComponent } from './pages/agregar-oficinas/agregar-oficinas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CrearPacienteComponent,
-    DatosPacienteComponent,
-    NuevoHistorialComponent,
-    HistorialPacienteComponent,
-    ExpedienteComponent,
+    
     LoginComponent,
-    FiltrartablaPipe
+    FiltrartablaPipe,
+    IngresoArticuloComponent,
+    SalidaArticuloComponent,
+    MovimientoArticuloComponent,
+    TrasladoArticuloComponent,
+    AdministracionArticulosComponent,
+    AgregarArticulosComponent,
+    AdministracionOficinasComponent,
+    AgregarOficinasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CrearPacienteComponent } from './pages/crear-paciente/crear-paciente.component';
-import { DatosPacienteComponent } from './pages/datos-paciente/datos-paciente.component';
-import { ExpedienteComponent } from './pages/expediente/expediente.component';
-import { HistorialPacienteComponent } from './pages/historial-paciente/historial-paciente.component';
+import { AdministracionArticulosComponent } from './pages/administracion-articulos/administracion-articulos.component';
+import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
+
+import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-articulo.component';
 import { LoginComponent } from './pages/login/login.component';
-import { NuevoHistorialComponent } from './pages/nuevo-historial/nuevo-historial.component';
+
+import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
+import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
 
 const routes: Routes = [
-  {path:'crear-paciente', component:CrearPacienteComponent},
-  
-  {path:'datos-paciente',component:DatosPacienteComponent},
-  {path:'historial-paciente',component:HistorialPacienteComponent},
-  {path:'nuevo-historial',component:NuevoHistorialComponent},
   {path:'login',component:LoginComponent},
-  {path:'expediente/:id',component:ExpedienteComponent},
+  {path:'ingreso-articulos',component:IngresoArticuloComponent},
+  {path:'salida-articulos',component:SalidaArticuloComponent},
+  {path:'traslado-articulos',component:TrasladoArticuloComponent},
+  {path:'adiministracion-articulos',component:AdministracionArticulosComponent},
+  {path:'adiministracion-oficinas',component:AdministracionOficinasComponent},
+  
+ 
+  
+  
   {path:'',pathMatch:'full',redirectTo:'informacion'},
   {path:'**',redirectTo:'login'}
 ];

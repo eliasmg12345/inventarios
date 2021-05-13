@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PacientesService {
 
-  URL='http://localhost/api/';
+  URL='http://localhost/apinve/';
 
   constructor(private http:HttpClient) { }
 

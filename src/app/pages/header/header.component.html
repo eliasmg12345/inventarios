@@ -91,19 +91,25 @@
                         <a class="waves-effect waves-dark" aria-expanded="false"><img src="../assets/images/users/d6.jpg" alt="user" /><span class="hide-menu">Ing. Walter</span></a>                        
                     </li>
                     <li class="nav-devider"></li>
-                    <li> <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Articulos</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Acciones</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a [routerLink]="['/crear-paciente']" >Registrar </a></li>
-                            <li><a [routerLink]="['/datos-paciente']" >Datos del </a></li>
+                            <li><a [routerLink]="['/ingreso-articulos']" >Ingreso </a></li>
+                            <li><a [routerLink]="['/salida-articulos']" >Salida </a></li>
+                            <li><a [routerLink]="['/traslado-articulos']" >Traslado </a></li>
                         </ul>
                     </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Registros </span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Administrador </span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a [routerLink]="['/nuevo-historial']" >Nuevo Historial</a></li>
-                            <li><a [routerLink]="['/historial-paciente']">Historial del </a></li>
+                            <li><a [routerLink]="['/adiministracion-articulos']" >Articulos</a></li>
+                            <li><a [routerLink]="['/adiministracion-oficinas']">Oficinas </a></li>
                         </ul>
                     </li>
-                    
+                    <li> <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Reportes </span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a [routerLink]="['/']" >Movimientos</a></li>
+                            <li><a [routerLink]="['/']">Bodega </a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
