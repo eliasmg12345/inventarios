@@ -63,4 +63,11 @@ export class ExpedienteComponent implements OnInit {
       }
     });
   }
+
+
+  //seleccionar receta
+  seleccionarReceta(idhistorial){
+    this.pacientesService.seleccionarRecetaPDF(idhistorial);
+  }
+
 }

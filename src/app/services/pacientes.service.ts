@@ -73,4 +73,10 @@ export class PacientesService {
   editarExpediente(expediente){
     return this.http.post(`${this.URL}EditarExpediente.php`,JSON.stringify(expediente));
   }
+
+
+  //imprimir receta
+  seleccionarRecetaPDF(idhistorial:number){
+    window.open(`${this.URL}extensiones/tcpdf/pdf/rec.php?idhistorial=${idhistorial}`,'_blank');
+  }
 }
