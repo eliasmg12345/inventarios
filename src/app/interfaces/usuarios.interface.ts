@@ -1,13 +1,19 @@
-export class Pacientes{
+export class Usuarios{
     
 ​​
-dirpaciente:String;
+apellido_usuario: string;
 ​​
-edadpaciente:String;
+email_usuario: string;
 ​​
-idpaciente: String;
+estado_usuario: string;
 ​​
-nompaciente:String;
+id_cargo: string;
 ​​
-telpaciente:String;
+id_usuario: string;
+​​
+nombre_usuario: string;
+​​
+password: string;
+​​
+telefono_usuario: string;
 }

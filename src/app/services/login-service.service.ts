@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class LoginServiceService {
 
-  url='http://localhost/apinve/';
+  url='http://localhost/APINVE/';
 
   constructor(private http:HttpClient) { }
 
   loginUsuario(login){
-    return this.http.post(`${this.url}Login.php`,JSON.stringify(login));
+    return this.http.post(`${this.url}Loginp.php`,JSON.stringify(login));
   }
 }

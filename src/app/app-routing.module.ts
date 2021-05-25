@@ -8,12 +8,14 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
 import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'ingreso-articulos',component:IngresoArticuloComponent},
   {path:'salida-articulos',component:SalidaArticuloComponent},
   {path:'traslado-articulos',component:TrasladoArticuloComponent},
+  {path:'usuarios',component:UsuariosComponent},
   {path:'adiministracion-articulos',component:AdministracionArticulosComponent},
   {path:'adiministracion-oficinas',component:AdministracionOficinasComponent},
   
