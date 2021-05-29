@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdministracionArticulosComponent } from './pages/administracion-articulos/administracion-articulos.component';
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
+import { CargosComponent } from './pages/cargos/cargos.component';
 
 import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-articulo.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'salida-articulos',component:SalidaArticuloComponent},
   {path:'traslado-articulos',component:TrasladoArticuloComponent},
   {path:'usuarios',component:UsuariosComponent},
+  {path:'cargos',component:CargosComponent},
   {path:'adiministracion-articulos',component:AdministracionArticulosComponent},
   {path:'adiministracion-oficinas',component:AdministracionOficinasComponent},
   

@@ -22,6 +22,7 @@ import { AgregarArticulosComponent } from './pages/agregar-articulos/agregar-art
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
 import { AgregarOficinasComponent } from './pages/agregar-oficinas/agregar-oficinas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { CargosComponent } from './pages/cargos/cargos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
     AgregarArticulosComponent,
     AdministracionOficinasComponent,
     AgregarOficinasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    CargosComponent
   ],
   imports: [
     BrowserModule,

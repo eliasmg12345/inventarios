@@ -8,7 +8,7 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Administracoion Usuarios</h3>
+                <h3 class="text-themecolor">Administracoion Cargos</h3>
             </div>
 
         </div>
@@ -21,7 +21,7 @@
         <!-- ============================================================== -->
         
         <div class="form-group row">
-            <button type="button"  class=" btn btn-outline-primary">Agregar Usuarios</button>
+            <button type="button"  class=" btn btn-outline-primary">Agregar Cargos</button>
             </div>
 
         <div class="row">
@@ -31,24 +31,17 @@
                         <table id="demo-foo-accordion" class="table m-b-0 toggle-arrow-tiny">
                             <thead>
                                 <tr>
-                                    <th data-toggle="true"> Nombres</th>
-                                    <th data-toggle="true"> Email</th>
-                                    <th > Telefono</th>
-                                    <th > Cargo</th>
-                                    <th>Oficina</th>
-                                    <th  data-toggle="true"> Estado </th>
+                                    <th data-toggle="true"> Nombre</th>
+                                    <th data-toggle="true"> permisos</th>
                                     <th>Acciones</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let us of usuarios">
-                                    <td>{{us.nombre_usuario}} {{us.apellido_usuario}}</td>
-                                    <td>{{us.email_usuario}}</td>
-                                    <td>{{us.telefono_usuario}}</td>
-                                    <td>{{us.nombre_cargo}}</td>
-                                    <td>{{us.nombre_oficina}}</td>
-                                    <td>{{us.estado_usuario}}</td>
+                                <tr *ngFor="let cargo of cargos">    
+                                    <td>{{cargo.nombre_cargo}}</td>
+                                    
+                                    <td>{{cargo.nombre_permiso}}</td>
                                     <td>
                                         <a  class="btn btn-warning"
                                             data-toggle="modal" ><i

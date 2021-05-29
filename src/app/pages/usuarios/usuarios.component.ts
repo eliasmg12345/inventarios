@@ -14,10 +14,10 @@ export class UsuariosComponent implements OnInit {
   constructor(public administradorService:AdministradorService) { }
 
   ngOnInit(): void {
-    this.mostratPacientes();
+    this.mostratUsuarios();
   }
 
-  mostratPacientes(){
+  mostratUsuarios(){
     this.administradorService.getUsuario().subscribe((resp:Usuarios[])=>{
       this.usuarios=resp;
       console.log(this.usuarios);

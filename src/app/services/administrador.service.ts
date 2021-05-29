@@ -15,4 +15,7 @@ export class AdministradorService {
     return this.http.get(`${this.url}MostrarUsuarios.php`);      
   }
 
+  getCargo(){
+    return this.http.get(`${this.url}MostrarCargos.php`);
+  }
 }
