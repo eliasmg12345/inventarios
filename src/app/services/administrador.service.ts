@@ -18,4 +18,8 @@ export class AdministradorService {
   getCargo(){
     return this.http.get(`${this.url}MostrarCargos.php`);
   }
+
+  getPermiso(){
+    return this.http.get(`${this.url}.php`);
+  }
 }
