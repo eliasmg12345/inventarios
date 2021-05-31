@@ -1,5 +1,7 @@
 export class cargos{
-    id_cargo:string;
+    estado_cargo: string;
+​​
+id_cargo: string;
+​​
 nombre_cargo: string;
-nombre_permiso:string;
 }
