@@ -1,4 +1,4 @@
-export class cargos{
+export class Cargos{
     estado_cargo: string;
 ​​
 id_cargo: string;

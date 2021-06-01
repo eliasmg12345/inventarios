@@ -19,7 +19,19 @@ export class AdministradorService {
     return this.http.get(`${this.url}MostrarCargos.php`);
   }
 
-  getPermiso(){
-    return this.http.get(`${this.url}.php`);
+  seleccionarPermiso(id_cargo:number){
+    return this.http.get(`${this.url}SeleccionarPermiso.php?id_cargo=${id_cargo}`);
+  }
+
+  seleccionarPermisoEditar(id_permiso:number){
+    return this.http.get(`${this.url}SeleccionarPermisoEditar.php?id_permiso=${id_permiso}`);
+  }
+
+  editarPermiso(permisos){
+    return this.http.post(`${this.url}EditarPermiso.php`,JSON.stringify(permisos));
+  }
+  
+  seleccionarCargo(id_cargo:number){
+    return this.http.get(`${this.url}SeleccionarCargo.php?id_cargo=${id_cargo}`);
   }
 }
