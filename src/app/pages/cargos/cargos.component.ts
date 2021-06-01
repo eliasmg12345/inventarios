@@ -70,9 +70,30 @@ export class CargosComponent implements OnInit {
 
   seleccionarCargo(id_cargo){
     this.administradorService.seleccionarCargo(id_cargo).subscribe((resp)=>{
-      this.cargo=resp;
+      this.cargo=resp[0];
       console.log(this.cargo);
     });
+  }
+
+  editarCargo(){
+    this.administradorService.editarCargo(this.cargo).subscribe((resp)=>{
+      if(resp['resultado']=='OK'){
+
+
+        Swal.fire({
+          icon: 'success',
+          title: 'EDITADO CORRECTAMENTE',
+          showConfirmButton: false,
+          timer: 2500
+        })
+
+        this.mostrarCargos();
+      }
+    });
+  }
+
+  eliminarCargo(id_cargo){
+
   }
 
 

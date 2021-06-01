@@ -34,4 +34,8 @@ export class AdministradorService {
   seleccionarCargo(id_cargo:number){
     return this.http.get(`${this.url}SeleccionarCargo.php?id_cargo=${id_cargo}`);
   }
+
+  editarCargo(cargos){
+    return this.http.post(`${this.url}EditarCargo.php`,JSON.stringify(cargos));
+  }
 }
