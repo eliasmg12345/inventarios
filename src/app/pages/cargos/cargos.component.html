@@ -106,9 +106,9 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Estado</label>
-                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
-                                                        <option value="Activo"  >Activo</option>
-                                                        <option value="Inactivo" >Inactivo</option>
+                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control " placeholder="cargo.estado_cargo">
+                                                        <option value="Activo"  class="form-control">Activo</option>
+                                                        <option value="Inactivo" class="form-control">Inactivo</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -237,30 +237,39 @@
                         </div>
                         <div class="card">
                             <form>
-                            <div class="card-body">
-                                    <div class="form-body">
-                                        <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Permiso</label>
-                                                    <input type="text"  class="form-control" name="permisoEditar.nombre_permiso" [(ngModel)]="permisoEditar.nombre_permiso" placeholder="tipo de permiso" >
+                                <div class="card-body">
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Permiso</label>
+                                                        <input type="text"  class="form-control" name="permisoEditar.nombre_permiso" [(ngModel)]="permisoEditar.nombre_permiso" placeholder="tipo de permiso" >
+                                                    </div>
                                                 </div>
+                                                <!--/span-->
+                                                
+                                                <!--/span-->
                                             </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Descripcion</label>
-                                                    <input type="text"  class="form-control" name="permisoEditar.descripcion_permiso" [(ngModel)]="permisoEditar.descripcion_permiso"  placeholder="descripcion">
-                                                </div>
-                                            </div>
-                                            <!--/span-->
+
+                                            
+                                                                                
                                         </div>
-                                                                              
-                                    </div>
-                                    <div class="form-actions">
-                                        <button (click)="editarPermiso()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
-                                    </div>
-                            </div>
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Descripcion</label>
+                                                        <input type="text"  class="form-control input-lg" name="permisoEditar.descripcion_permiso" [(ngModel)]="permisoEditar.descripcion_permiso"  placeholder="descripcion">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-actions">
+                                            <button (click)="editarPermiso()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
+                                        </div>
+                                </div>
                             </form>
                         </div>
                     </div>

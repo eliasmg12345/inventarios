@@ -13,7 +13,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 export class CargosComponent implements OnInit {
 
   cargos:Cargos[];
-  permiso:any={};
+  permiso:Permisos[];
   cargo:any={};
   permisoEditar:any={};
 
@@ -31,8 +31,12 @@ export class CargosComponent implements OnInit {
   }
 
   seleccionarPermiso(id_cargo){
-    this.administradorService.seleccionarPermiso(id_cargo).subscribe((resp)=>{
+    this.administradorService.seleccionarPermiso(id_cargo).subscribe((resp:Permisos[])=>{
+      if(resp.length===0){
+        this.permiso=[];
+      }
       this.permiso=resp;
+      
       console.log(this.permiso);
     });
   }
@@ -65,7 +69,50 @@ export class CargosComponent implements OnInit {
 
 
   eliminarPermiso(id_permiso){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Desea Eliminar el paciente?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar!',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
 
+        this.administradorService.eliminarPermiso(id_permiso).subscribe(resp=>{
+          if(resp['resultado']==='OK'){
+
+
+
+          swalWithBootstrapButtons.fire(
+            'Eliminado!',
+            'haga click para continuar.',
+            'success'
+          )
+            this.mostrarCargos();
+        }
+      });
+
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'xxxx',
+          'error'
+        )
+      }
+    })
   }
 
   seleccionarCargo(id_cargo){

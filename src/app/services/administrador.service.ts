@@ -30,6 +30,10 @@ export class AdministradorService {
   editarPermiso(permisos){
     return this.http.post(`${this.url}EditarPermiso.php`,JSON.stringify(permisos));
   }
+
+  eliminarPermiso(id_permiso){
+    return this.http.get(`${this.url}EliminarPermiso.php?id_permiso=${id_permiso}`);
+  }
   
   seleccionarCargo(id_cargo:number){
     return this.http.get(`${this.url}SeleccionarCargo.php?id_cargo=${id_cargo}`);
