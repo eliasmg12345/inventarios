@@ -147,6 +147,20 @@ export class CargosComponent implements OnInit {
 
   }
 
+  agregarCargo(id_cargo){
+    this.administradorService.agregarCargo(id_cargo).subscribe((resp)=>{
+      if(resp['resultado']=='OK'){
+        Swal.fire({
+          icon:'succes',
+          title:'Agregado Correctamente',
+          showConfirmButton:false,
+          timer:2500
+        })
+        this.mostrarCargos();
+      }
+    });
+  }
+
 
 
 }

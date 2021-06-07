@@ -32,6 +32,7 @@
                             <thead>
                                 <tr>
                                     <th data-toggle="true"> Nombre</th>
+                                    <th>estado</th>
                                     <th data-toggle="true"> permisos</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
@@ -41,7 +42,7 @@
                             <tbody>
                                 <tr *ngFor="let cargo of cargos">    
                                     <td>{{cargo.nombre_cargo}}</td>
-                                    
+                                    <td>{{cargo.estado_cargo}}</td>
                                     <td>
                                         <a (click)="seleccionarPermiso(cargo.id_cargo);" class="btn btn-success"
                                             data-toggle="modal" data-target=".example4-modal-lg"><i
@@ -106,9 +107,9 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Estado</label>
-                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control " placeholder="cargo.estado_cargo">
-                                                        <option value="Activo"  class="form-control">Activo</option>
-                                                        <option value="Inactivo" class="form-control">Inactivo</option>
+                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
+                                                        <option value="activo"  class="form-control" selected>Activo</option>
+                                                        <option value="inactivo" class="form-control">Inactivo</option>
                                                     </select>
                                                 </div>
                                             </div>

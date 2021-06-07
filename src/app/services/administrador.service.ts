@@ -42,4 +42,9 @@ export class AdministradorService {
   editarCargo(cargos){
     return this.http.post(`${this.url}EditarCargo.php`,JSON.stringify(cargos));
   }
+
+
+  agregarCargo(id_cargo){
+    return this.http.post(`${this.url}AgregarCargo.php`,JSON.stringify(id_cargo));
+  }
 }
