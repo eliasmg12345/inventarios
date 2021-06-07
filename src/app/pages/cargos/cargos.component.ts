@@ -16,8 +16,11 @@ export class CargosComponent implements OnInit {
   permiso:Permisos[];
   cargo:any={};
   permisoEditar:any={};
+  promPosts:Promise<any[]>;
 
-  constructor(public administradorService:AdministradorService) { }
+  constructor(public administradorService:AdministradorService) {
+    
+   }
 
   ngOnInit(): void {
     this.mostrarCargos();
@@ -33,12 +36,13 @@ export class CargosComponent implements OnInit {
   seleccionarPermiso(id_cargo){
     this.administradorService.seleccionarPermiso(id_cargo).subscribe((resp:Permisos[])=>{
       if(resp.length===0){
-        this.permiso=[];
+        
+      }else{
+        console.log(resp);
+        this.permiso=resp;
       }
-      this.permiso=resp;
-      
-      console.log(this.permiso);
     });
+    this.permiso=[];
   }
 
 

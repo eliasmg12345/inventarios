@@ -4,4 +4,5 @@ export class Cargos{
 id_cargo: number;
 ​​
 nombre_cargo: string;
+id_permiso:string;
 }
