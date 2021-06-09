@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cargos } from 'src/app/interfaces/cargos.interface';
 import { Permisos } from 'src/app/interfaces/permisos.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
@@ -18,7 +19,7 @@ export class CargosComponent implements OnInit {
   permisoEditar:any={};
   promPosts:Promise<any[]>;
 
-  constructor(public administradorService:AdministradorService) {
+  constructor(public administradorService:AdministradorService,private router:Router) {
     
    }
 
@@ -64,15 +65,16 @@ export class CargosComponent implements OnInit {
           showConfirmButton: false,
           timer: 2500
         })
-
+        
         this.mostrarCargos();
+
       }
     });
   }
 
 
 
-  eliminarPermiso(id_permiso){
+  eliminarPermiso(id_permiso,id_cargo){
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -92,9 +94,9 @@ export class CargosComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this.administradorService.eliminarPermiso(id_permiso).subscribe(resp=>{
+        this.administradorService.eliminarPermiso(id_permiso,id_cargo).subscribe(resp=>{
           if(resp['resultado']==='OK'){
-
+            this.seleccionarPermiso(id_cargo);
 
 
           swalWithBootstrapButtons.fire(
@@ -147,18 +149,52 @@ export class CargosComponent implements OnInit {
 
   }
 
-  agregarCargo(id_cargo){
-    this.administradorService.agregarCargo(id_cargo).subscribe((resp)=>{
-      if(resp['resultado']=='OK'){
-        Swal.fire({
-          icon:'succes',
-          title:'Agregado Correctamente',
-          showConfirmButton:false,
-          timer:2500
-        })
-        this.mostrarCargos();
+  agregarCargo(){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Desea registrar?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar!',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.administradorService.agregarCargo(this.cargo).subscribe(resp=>{
+          if(resp['resultado']==='OK'){
+
+
+
+          swalWithBootstrapButtons.fire(
+            'Registrado!',
+            'Cargo registrado.',
+            'success'
+          )
+          this.router.navigate(['cargos']);
+          this.mostrarCargos();
+        }
+      });
+
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'xxxx',
+          'error'
+        )
       }
-    });
+    })
   }
 
 

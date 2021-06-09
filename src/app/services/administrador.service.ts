@@ -31,8 +31,8 @@ export class AdministradorService {
     return this.http.post(`${this.url}EditarPermiso.php`,JSON.stringify(permisos));
   }
 
-  eliminarPermiso(id_permiso){
-    return this.http.get(`${this.url}EliminarPermiso.php?id_permiso=${id_permiso}`);
+  eliminarPermiso(id_permiso:number,id_cargo:number){
+    return this.http.get(`${this.url}EliminarPermiso.php?id_cargo=${id_cargo}&id_permiso=${id_permiso}`);
   }
   
   seleccionarCargo(id_cargo:number){
@@ -44,7 +44,11 @@ export class AdministradorService {
   }
 
 
-  agregarCargo(id_cargo){
-    return this.http.post(`${this.url}AgregarCargo.php`,JSON.stringify(id_cargo));
+  agregarCargo(cargo){
+    return this.http.post(`${this.url}AgregarCargo.php`,JSON.stringify(cargo));
   }
+  agregarPermisoCargo(id_cargo){
+
+  }
+    
 }

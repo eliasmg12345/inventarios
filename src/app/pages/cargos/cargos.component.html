@@ -21,7 +21,7 @@
         <!-- ============================================================== -->
         
         <div class="form-group row">
-            <button type="button"  class=" btn btn-outline-primary">Agregar Cargos</button>
+            <button type="button"  class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarCargo-modal-lg">Agregar Cargos</button>
             </div>
 
         <div class="row">
@@ -73,6 +73,63 @@
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
 <!-- ============================================================== -->
+
+<!-- ================================   AGREGAR CARGO   ========================== -->
+<div class="row">
+    <div class="col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <!-- sample modal content -->
+            <div class="modal fade agregarCargo-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myLargeModalLabel">Agregar Cargo</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="card">
+                            <form>
+                            <div class="card-body">
+                                    <div class="form-body">
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Cargo</label>
+                                                    <input type="text"  class="form-control" name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo" placeholder="cargo" >
+                                                </div>
+                                            </div>
+                                            
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Estado</label>
+                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
+                                                        <option value="activo"  class="form-control" selected>Activo</option>
+                                                        <option value="inactivo" class="form-control">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                                                              
+                                    </div>
+                                    <div class="form-actions">
+                                        <button (click)="agregarCargo()" class="btn btn-success"> <i class="fa fa-check" ></i> Agregar </button> 
+                                    </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->                                
+        </div>
+    </div>
+    </div>
+    </div>
+
 
 
 
@@ -192,7 +249,7 @@
                                                                     <a (click)="seleccionarPermisoEditar(permiso.id_permiso)" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
                                                                 </td>
                                                                 <td> 
-                                                                    <a (click)="eliminarPermiso(permiso.id_permiso)" class="btn btn-success"><i class="fa fa-trash"></i></a>
+                                                                    <a (click)="eliminarPermiso(permiso.id_permiso,permiso.id_cargo)" class="btn btn-success"><i class="fa fa-trash"></i></a>
                                                                 </td>
                                                             </tr>
                                                         </tbody>

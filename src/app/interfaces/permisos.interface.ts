@@ -3,5 +3,5 @@ export class Permisos{
     nombre_permiso:string;
     descripcion_permiso: string;
     id_cargo:number;
-    id_cargo_permiso;
+    
 }
