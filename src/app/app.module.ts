@@ -17,12 +17,12 @@ import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-artic
 import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
 import { MovimientoArticuloComponent } from './pages/movimiento-articulo/movimiento-articulo.component';
 import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
-import { AdministracionArticulosComponent } from './pages/administracion-articulos/administracion-articulos.component';
 import { AgregarArticulosComponent } from './pages/agregar-articulos/agregar-articulos.component';
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
 import { AgregarOficinasComponent } from './pages/agregar-oficinas/agregar-oficinas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { CargosComponent } from './pages/cargos/cargos.component';
+import { AdministracionMaterialesComponent } from './pages/administracion-materiales/administracion-materiales.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +35,12 @@ import { CargosComponent } from './pages/cargos/cargos.component';
     SalidaArticuloComponent,
     MovimientoArticuloComponent,
     TrasladoArticuloComponent,
-    AdministracionArticulosComponent,
     AgregarArticulosComponent,
     AdministracionOficinasComponent,
     AgregarOficinasComponent,
     UsuariosComponent,
-    CargosComponent
+    CargosComponent,
+    AdministracionMaterialesComponent,
   ],
   imports: [
     BrowserModule,

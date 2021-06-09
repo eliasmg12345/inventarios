@@ -21,7 +21,7 @@
         <!-- ============================================================== -->
         
         <div class="form-group row">
-            <button type="button"  class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarCargo-modal-lg">Agregar Cargos</button>
+            <button type="button"  class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarCargo-modal-lg" (click)="mostrarPermisos()">Agregar Cargos</button>
             </div>
 
         <div class="row">
@@ -92,7 +92,7 @@
                             <div class="card-body">
                                     <div class="form-body">
                                         <div class="row p-t-20">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Cargo</label>
                                                     <input type="text"  class="form-control" name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo" placeholder="cargo" >
@@ -100,13 +100,20 @@
                                             </div>
                                             
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Estado</label>
                                                     <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
                                                         <option value="activo"  class="form-control" selected>Activo</option>
                                                         <option value="inactivo" class="form-control">Inactivo</option>
                                                     </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group" *ngFor="let permiso of permiso">
+                                                    
+                                                    <input  type="checkbox"  class="form-control" name="permiso.nombre_permiso" [(ngModel)]="permiso.nombre_permiso" ><label>{{permiso.nombre_permiso}}</label>
                                                 </div>
                                             </div>
                                             

@@ -18,6 +18,9 @@ export class AdministradorService {
   getCargo(){
     return this.http.get(`${this.url}MostrarCargos.php`);
   }
+  getPermiso(){
+    return this.http.get(`${this.url}MostrarPermisos.php`);
+  }
 
   seleccionarPermiso(id_cargo:number){
     return this.http.get(`${this.url}SeleccionarPermiso.php?id_cargo=${id_cargo}`);
@@ -47,8 +50,8 @@ export class AdministradorService {
   agregarCargo(cargo){
     return this.http.post(`${this.url}AgregarCargo.php`,JSON.stringify(cargo));
   }
-  agregarPermisoCargo(id_cargo){
-
+  agregarPermisoCargo(id_cargo,id_permiso){
+    return this.http.post(`${this.url}AgregarPermisoCargo.php`,JSON.stringify(id_cargo,id_permiso));
   }
     
 }

@@ -33,6 +33,12 @@ export class CargosComponent implements OnInit {
       console.log(this.cargos);
     });
   }
+  mostrarPermisos(){
+    this.administradorService.getPermiso().subscribe((resp:Permisos[])=>{
+      this.permiso=resp;
+      console.log(this.permiso);
+    });
+  }
 
   seleccionarPermiso(id_cargo){
     this.administradorService.seleccionarPermiso(id_cargo).subscribe((resp:Permisos[])=>{
