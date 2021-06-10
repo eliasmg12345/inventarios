@@ -21,7 +21,7 @@
         <!-- ============================================================== -->
         
         <div class="form-group row">
-            <button type="button"  class=" btn btn-outline-primary">Agregar Usuarios</button>
+            <button type="button"  class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarUsuario-modal-lg">Agregar Usuarios</button>
             </div>
 
         <div class="row">
@@ -72,4 +72,114 @@
 <!-- ============================================================== -->
 
 
+<!-- ================================   AGREGAR USUARIO  ========================== -->
 
+<div class="row">
+    <div class="col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <!-- sample modal content -->
+            <div class="modal fade agregarUsuario-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myLargeModalLabel">Agregar Usuario</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="card">
+                            <form>
+                            <div class="card-body">
+                                    <div class="form-body">
+                                        <div class="row p-t-8">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nombre</label>
+                                                    <input type="text"  class="form-control" name="usuario.nombre_usuario" [(ngModel)]="usuario.nombre_usuario" placeholder="Nombre" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Apellido</label>
+                                                    <input type="text"  class="form-control" name="usuario.apellido_usuario" [(ngModel)]="usuario.apellido_usuario" placeholder="Nombre" >
+                                                </div>
+                                            </div>                                     
+                                        </div>
+
+                                        <div class="row p-t-8">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Telefono</label>
+                                                    <input type="text"  class="form-control" name="usuario.telefono_usuario" [(ngModel)]="usuario.telefono_usuario" placeholder="Nombre" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Correo</label>
+                                                    <input type="email"  class="form-control" name="usuario.email_usuario" [(ngModel)]="usuario.email_usuario" placeholder="Nombre" >
+                                                </div>
+                                            </div>                                     
+                                        </div>
+
+
+
+                                        <div class="row p-t-8">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Cargo</label>
+                                                    <select  class="form-control " name="usuario.id_cargo" [(ngModel)]="usuario.id_cargo">
+                                                        <option value="2"  class="form-control">Asesor</option>
+                                                        <option value="3" class="form-control">personal</option>
+                                                        <option value="4" class="form-control">Proveedor</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row p-t-6">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Contrasena</label>
+                                                    <input type="password" name="" id="" class="form-control" name="usuario.password" [(ngModel)]="usuario.password" >
+                                                </div>
+                                            </div>                               
+                                        </div>
+
+
+                                        <div class="row p-t-8">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Oficina</label>
+                                                    <select  class="form-control " name="usuario.id_oficina" [(ngModel)]="usuario.id_oficina">
+                                                        <option value="1"  class="form-control">Of 1</option>
+                                                        <option value="2" class="form-control">Of 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Estado</label>
+                                                    <select  class="form-control " name="usuario.estado_usuario" [(ngModel)]="usuario.estado_usuario">
+                                                        <option value="Activo"  class="form-control">Activo</option>
+                                                        <option value="Inactivo" class="form-control">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                   
+                                    </div>
+                                    <div class="form-actions">
+                                        <button (click)="agregarUsuario()" class="btn btn-success"> <i class="fa fa-check" ></i> Agregar </button> 
+                                    </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->                                
+        </div>
+    </div>
+    </div>
+    </div>

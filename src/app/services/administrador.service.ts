@@ -10,7 +10,7 @@ export class AdministradorService {
 
   constructor(private http:HttpClient) {}
 
-  //mostrar usuarios
+  //CARGOS Y PERMISOS
   getUsuario(){
     return this.http.get(`${this.url}MostrarUsuarios.php`);      
   }
@@ -53,5 +53,25 @@ export class AdministradorService {
   agregarPermisoCargo(id_cargo,id_permiso){
     return this.http.post(`${this.url}AgregarPermisoCargo.php`,JSON.stringify(id_cargo,id_permiso));
   }
-    
+
+  // MATERIALES
+
+  getMaterial(){
+    return this.http.get(`${this.url}MostrarMateriales.php`);
+  }
+  agregarMaterial(material){
+    return this.http.post(`${this.url}AgregarMaterial.php`,JSON.stringify(material));
+  }
+  eliminarMaterial(id_material){
+    return this.http.get(`${this.url}EliminarMaterial.php?id_material=${id_material}`);
+  }
+
+  // USUARIOS
+
+  agregarUsuario(usuario){
+    return this.http.post(`${this.url}AgregarUsuario.php`,JSON.stringify(usuario));
+  }
+
+
+
 }
