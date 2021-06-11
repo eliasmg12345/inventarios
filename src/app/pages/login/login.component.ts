@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       if (datos['resultado'] === 'OK') {
 
         console.log(datos['mensaje']);
-        this.router.navigate(['ingreso-articulos']);
+        this.router.navigate(['cargos']);
         console.log('LIKEEEEE');
 
       } else {

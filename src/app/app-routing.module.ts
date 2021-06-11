@@ -14,20 +14,21 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
+
+    //LOGIN   
+
+  {path:'psg',component:LoginComponent},
   {path:'ingreso-articulos',component:IngresoArticuloComponent,canActivate:[LoginGuard]},
-  {path:'salida-articulos',component:SalidaArticuloComponent},
-  {path:'traslado-articulos',component:TrasladoArticuloComponent},
-  {path:'usuarios',component:UsuariosComponent},
-  {path:'cargos',component:CargosComponent},
-  {path:'administracion-materiales',component:AdministracionMaterialesComponent},
-  {path:'adiministracion-oficinas',component:AdministracionOficinasComponent},
-  
- 
+    {path:'salida-articulos',component:SalidaArticuloComponent,canActivate:[LoginGuard]},
+    {path:'traslado-articulos',component:TrasladoArticuloComponent,canActivate:[LoginGuard]},
+    {path:'usuarios',component:UsuariosComponent,canActivate:[LoginGuard]},
+    {path:'cargos',component:CargosComponent,canActivate:[LoginGuard]},
+    {path:'administracion-materiales',component:AdministracionMaterialesComponent,canActivate:[LoginGuard]},
+    {path:'adiministracion-oficinas',component:AdministracionOficinasComponent,canActivate:[LoginGuard]},
   
   
-  {path:'',pathMatch:'full',redirectTo:'login'},
-  {path:'**',redirectTo:'login'}
+  {path:'',pathMatch:'full',redirectTo:'psg'},
+  {path:'**',redirectTo:'psg'}
 ];
  
 @NgModule({
