@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './login.guard';
 import { AdministracionMaterialesComponent } from './pages/administracion-materiales/administracion-materiales.component';
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
 import { CargosComponent } from './pages/cargos/cargos.component';
@@ -11,9 +12,10 @@ import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo
 import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
+
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'ingreso-articulos',component:IngresoArticuloComponent},
+  {path:'ingreso-articulos',component:IngresoArticuloComponent,canActivate:[LoginGuard]},
   {path:'salida-articulos',component:SalidaArticuloComponent},
   {path:'traslado-articulos',component:TrasladoArticuloComponent},
   {path:'usuarios',component:UsuariosComponent},
@@ -24,7 +26,7 @@ const routes: Routes = [
  
   
   
-  {path:'',pathMatch:'full',redirectTo:'informacion'},
+  {path:'',pathMatch:'full',redirectTo:'login'},
   {path:'**',redirectTo:'login'}
 ];
  

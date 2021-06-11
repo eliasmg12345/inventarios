@@ -35,7 +35,7 @@ export class AdministracionMaterialesComponent implements OnInit {
     this.caracteristica=mat;
   }
   agregarMaterial(){
-
+    
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -62,13 +62,14 @@ export class AdministracionMaterialesComponent implements OnInit {
 
           swalWithBootstrapButtons.fire(
             'Registrado!',
-            'Cargo registrado.',
+            'Material registrado.',
             'success'
           )
-          this.router.navigate(['administracion-materiales']);
           this.mostrarMateriales();
+          this.router.navigate(['administracion-materiales']);
         }
       });
+      this.material=[];
 
       } else if (
         /* Read more about handling dismissals below */
@@ -95,7 +96,7 @@ export class AdministracionMaterialesComponent implements OnInit {
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Desea Eliminar el paciente?',
+      title: 'Desea Eliminar el Material?',
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
