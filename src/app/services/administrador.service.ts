@@ -11,10 +11,7 @@ export class AdministradorService {
   constructor(private http:HttpClient) {}
 
   //CARGOS Y PERMISOS
-  getUsuario(){
-    return this.http.get(`${this.url}MostrarUsuarios.php`);      
-  }
-
+  
   getCargo(){
     return this.http.get(`${this.url}MostrarCargos.php`);
   }
@@ -68,8 +65,22 @@ export class AdministradorService {
 
   // USUARIOS
 
+  getUsuario(){
+    return this.http.get(`${this.url}MostrarUsuarios.php`);      
+  }
+
   agregarUsuario(usuario){
     return this.http.post(`${this.url}AgregarUsuario.php`,JSON.stringify(usuario));
+  }
+
+
+  // OFICINAS
+
+  getOficina(){
+    return this.http.get(`${this.url}MostrarOficinas.php`);
+  }
+  seleccionarOficina(id_oficina:number){
+    return this.http.get(`${this.url}SeleccionarOficina.php?id_oficina=${id_oficina}`);
   }
 
 

@@ -13,16 +13,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { FiltrartablaPipe } from './pipes/filtrartabla.pipe';
 
 import {NgxPaginationModule} from 'ngx-pagination';
-import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-articulo.component';
-import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
-import { MovimientoArticuloComponent } from './pages/movimiento-articulo/movimiento-articulo.component';
-import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
-import { AgregarArticulosComponent } from './pages/agregar-articulos/agregar-articulos.component';
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
 import { AgregarOficinasComponent } from './pages/agregar-oficinas/agregar-oficinas.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { CargosComponent } from './pages/cargos/cargos.component';
 import { AdministracionMaterialesComponent } from './pages/administracion-materiales/administracion-materiales.component';
+import { IngresoMaterialComponent } from './pages/ingreso-material/ingreso-material.component';
+import { SalidaMaterialComponent } from './pages/salida-material/salida-material.component';
+import { TrasladoMaterialComponent } from './pages/traslado-material/traslado-material.component';
+import { ReporteMaterialComponent } from './pages/reporte-material/reporte-material.component';
+import { MovimientoMaterialComponent } from './pages/movimiento-material/movimiento-material.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +31,16 @@ import { AdministracionMaterialesComponent } from './pages/administracion-materi
     
     LoginComponent,
     FiltrartablaPipe,
-    IngresoArticuloComponent,
-    SalidaArticuloComponent,
-    MovimientoArticuloComponent,
-    TrasladoArticuloComponent,
-    AgregarArticulosComponent,
     AdministracionOficinasComponent,
     AgregarOficinasComponent,
     UsuariosComponent,
     CargosComponent,
     AdministracionMaterialesComponent,
+    IngresoMaterialComponent,
+    SalidaMaterialComponent,
+    TrasladoMaterialComponent,
+    ReporteMaterialComponent,
+    MovimientoMaterialComponent,
   ],
   imports: [
     BrowserModule,

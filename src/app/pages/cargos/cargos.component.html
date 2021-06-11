@@ -19,10 +19,11 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
-        
+
         <div class="form-group row">
-            <button type="button"  class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarCargo-modal-lg" (click)="mostrarPermisos()">Agregar Cargos</button>
-            </div>
+            <button type="button" class=" btn btn-outline-primary" data-toggle="modal"
+                data-target=".agregarCargo-modal-lg" (click)="mostrarPermisos()">Agregar Cargos</button>
+        </div>
 
         <div class="row">
             <div class="col-12">
@@ -32,29 +33,31 @@
                             <thead>
                                 <tr>
                                     <th data-toggle="true"> Nombre</th>
-                                    <th>estado</th>
                                     <th data-toggle="true"> permisos</th>
+                                    <th>estado</th>
                                     <th>Editar</th>
                                     <th>Eliminar</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let cargo of cargos">    
+                                <tr *ngFor="let cargo of cargos">
                                     <td>{{cargo.nombre_cargo}}</td>
-                                    <td>{{cargo.estado_cargo}}</td>
                                     <td>
                                         <a (click)="seleccionarPermiso(cargo.id_cargo);" class="btn btn-success"
                                             data-toggle="modal" data-target=".example4-modal-lg"><i
                                                 class="fa fa-eye"></i></a>
                                     </td>
+                                    <td>{{cargo.estado_cargo}}</td>
                                     <td>
-                                        <a (click)="seleccionarCargo(cargo.id_cargo)" class="btn btn-warning" 
-                                        data-toggle="modal" data-target=".examplecargo-modal-lg"><i class="fa fa-edit"></i></a>
+                                        <a (click)="seleccionarCargo(cargo.id_cargo)" class="btn btn-warning"
+                                            data-toggle="modal" data-target=".examplecargo-modal-lg"><i
+                                                class="fa fa-edit"></i></a>
                                     </td>
 
                                     <td>
-                                        <a (click)="eliminarCargo(cargo.id_cargo)" class="btn btn-success"><i class="fa fa-trash"></i></a>
+                                        <a (click)="eliminarCargo(cargo.id_cargo)" class="btn btn-success"><i
+                                                class="fa fa-trash"></i></a>
                                     </td>
 
                                 </tr>
@@ -77,65 +80,74 @@
 <!-- ================================   AGREGAR CARGO   ========================== -->
 <div class="row">
     <div class="col-md-4">
-    <div class="card">
-        <div class="card-body">
-            <!-- sample modal content -->
-            <div class="modal fade agregarCargo-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel">Agregar Cargo</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        </div>
-                        <div class="card">
-                            <form>
-                            <div class="card-body">
-                                    <div class="form-body">
-                                        <div class="row p-t-20">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label">Cargo</label>
-                                                    <input type="text"  class="form-control" name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo" placeholder="cargo" >
-                                                </div>
-                                            </div>
-                                            
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Estado</label>
-                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
-                                                        <option value="activo"  class="form-control" selected>Activo</option>
-                                                        <option value="inactivo" class="form-control">Inactivo</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group" *ngFor="let permiso of permiso">
-                                                    
-                                                    <input  type="checkbox"  class="form-control" name="permiso.nombre_permiso" [(ngModel)]="permiso.nombre_permiso" ><label>{{permiso.nombre_permiso}}</label>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                                                              
-                                    </div>
-                                    <div class="form-actions">
-                                        <button (click)="agregarCargo()" class="btn btn-success"> <i class="fa fa-check" ></i> Agregar </button> 
-                                    </div>
+        <div class="card">
+            <div class="card-body">
+                <!-- sample modal content -->
+                <div class="modal fade agregarCargo-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">Agregar Cargo</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
-                            </form>
+                            <div class="card">
+                                <form>
+                                    <div class="card-body">
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Cargo</label>
+                                                        <input type="text" class="form-control"
+                                                            name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo"
+                                                            placeholder="cargo">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Estado</label>
+                                                        <select name="cargo.estado_cargo"
+                                                            [(ngModel)]="cargo.estado_cargo" class="form-control ">
+                                                            <option value="activo" class="form-control" selected>Activo
+                                                            </option>
+                                                            <option value="inactivo" class="form-control">Inactivo
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group" *ngFor="let permiso of permiso">
+
+                                                        <input type="checkbox" class="form-control"
+                                                            name="permiso.nombre_permiso"
+                                                            [(ngModel)]="permiso.nombre_permiso"><label>{{permiso.nombre_permiso}}</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-actions">
+                                            <button (click)="agregarCargo()" class="btn btn-success"> <i
+                                                    class="fa fa-check"></i> Agregar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-content -->
+                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /.modal -->
             </div>
-            <!-- /.modal -->                                
         </div>
     </div>
-    </div>
-    </div>
+</div>
 
 
 
@@ -145,58 +157,65 @@
 
 <div class="row">
     <div class="col-md-4">
-    <div class="card">
-        <div class="card-body">
-            <!-- sample modal content -->
-            <div class="modal fade examplecargo-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel">Modificar Cargo</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        </div>
-                        <div class="card">
-                            <form>
-                            <div class="card-body">
-                                    <div class="form-body">
-                                        <div class="row p-t-20">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Cargo</label>
-                                                    <input type="text"  class="form-control" name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo" placeholder="cargo" >
-                                                </div>
-                                            </div>
-                                            
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Estado</label>
-                                                    <select name="cargo.estado_cargo" [(ngModel)]="cargo.estado_cargo" class="form-control ">
-                                                        <option value="activo"  class="form-control" selected>Activo</option>
-                                                        <option value="inactivo" class="form-control">Inactivo</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                                                              
-                                    </div>
-                                    <div class="form-actions">
-                                        <button (click)="editarCargo()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
-                                    </div>
+        <div class="card">
+            <div class="card-body">
+                <!-- sample modal content -->
+                <div class="modal fade examplecargo-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">Modificar Cargo</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
-                            </form>
+                            <div class="card">
+                                <form>
+                                    <div class="card-body">
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Cargo</label>
+                                                        <input type="text" class="form-control"
+                                                            name="cargo.nombre_cargo" [(ngModel)]="cargo.nombre_cargo"
+                                                            placeholder="cargo">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Estado</label>
+                                                        <select name="cargo.estado_cargo"
+                                                            [(ngModel)]="cargo.estado_cargo" class="form-control ">
+                                                            <option value="activo" class="form-control" selected>Activo
+                                                            </option>
+                                                            <option value="inactivo" class="form-control">Inactivo
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-actions">
+                                            <button (click)="editarCargo()" class="btn btn-success"> <i
+                                                    class="fa fa-check"></i> Guardar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-content -->
+                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /.modal -->
             </div>
-            <!-- /.modal -->                                
         </div>
     </div>
-    </div>
-    </div>
+</div>
 
 
 
@@ -231,8 +250,8 @@
                                     <div class="card-body">
                                         <div class="form-body">
                                             <div class="col-12">
-                                                
-                                                
+
+
                                                 <div class="table-responsive-lg">
                                                     <table class="table">
 
@@ -242,31 +261,36 @@
                                                                 <th data-toggle="true"> Permiso</th>
                                                                 <th data-toggle="true"> Editar </th>
                                                                 <th>Eliminar</th>
-                            
+
                                                             </tr>
                                                         </thead>
 
-                                                        
+
                                                         <tbody>
                                                             <tr *ngFor="let permiso of permiso" class="col-12">
-                                                                <td ><label for="example-search-input"
+                                                                <td><label for="example-search-input"
                                                                         class="col-12 col-form-label">{{permiso.nombre_permiso}}</label>
                                                                 </td>
-                                                                <td> 
-                                                                    <a (click)="seleccionarPermisoEditar(permiso.id_permiso)" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
+                                                                <td>
+                                                                    <a (click)="seleccionarPermisoEditar(permiso.id_permiso)"
+                                                                        class="btn btn-warning" data-toggle="modal"
+                                                                        data-target=".example2-modal-lg"><i
+                                                                            class="fa fa-edit"></i></a>
                                                                 </td>
-                                                                <td> 
-                                                                    <a (click)="eliminarPermiso(permiso.id_permiso,permiso.id_cargo)" class="btn btn-success"><i class="fa fa-trash"></i></a>
+                                                                <td>
+                                                                    <a (click)="eliminarPermiso(permiso.id_permiso,permiso.id_cargo)"
+                                                                        class="btn btn-success"><i
+                                                                            class="fa fa-trash"></i></a>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                
-                                                
-                                                
-                                                
-                                                
+
+
+
+
+
                                             </div>
                                         </div>
 
@@ -290,41 +314,48 @@
 
 <div class="row">
     <div class="col-md-4">
-    <div class="card">
-        <div class="card-body">
-            <!-- sample modal content -->
-            <div class="modal fade example2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel">Modificar Permiso</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        </div>
-                        <div class="card">
-                            <form>
-                                <div class="card-body">
+        <div class="card">
+            <div class="card-body">
+                <!-- sample modal content -->
+                <div class="modal fade example2-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">Modificar Permiso</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="card">
+                                <form>
+                                    <div class="card-body">
                                         <div class="form-body">
                                             <div class="row p-t-20">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Permiso</label>
-                                                        <input type="text"  class="form-control" name="permisoEditar.nombre_permiso" [(ngModel)]="permisoEditar.nombre_permiso" placeholder="tipo de permiso" >
+                                                        <input type="text" class="form-control"
+                                                            name="permisoEditar.nombre_permiso"
+                                                            [(ngModel)]="permisoEditar.nombre_permiso"
+                                                            placeholder="tipo de permiso">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
-                                                
+
                                                 <!--/span-->
                                             </div>
 
-                                            
-                                                                                
+
+
                                         </div>
                                         <div class="form-body">
                                             <div class="row p-t-20">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Descripcion</label>
-                                                        <input type="text"  class="form-control input-lg" name="permisoEditar.descripcion_permiso" [(ngModel)]="permisoEditar.descripcion_permiso"  placeholder="descripcion">
+                                                        <input type="text" class="form-control input-lg"
+                                                            name="permisoEditar.descripcion_permiso"
+                                                            [(ngModel)]="permisoEditar.descripcion_permiso"
+                                                            placeholder="descripcion">
                                                     </div>
                                                 </div>
                                             </div>
@@ -332,23 +363,19 @@
 
 
                                         <div class="form-actions">
-                                            <button (click)="editarPermiso()" class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
+                                            <button (click)="editarPermiso()" class="btn btn-success"> <i
+                                                    class="fa fa-check"></i> Guardar </button>
                                         </div>
-                                </div>
-                            </form>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-content -->
+                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /.modal -->
             </div>
-            <!-- /.modal -->                                
         </div>
     </div>
-    </div>
-    </div>
-
-
-
-
-
+</div>

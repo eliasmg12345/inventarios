@@ -5,11 +5,13 @@ import { AdministracionMaterialesComponent } from './pages/administracion-materi
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
 import { CargosComponent } from './pages/cargos/cargos.component';
 
-import { IngresoArticuloComponent } from './pages/ingreso-articulo/ingreso-articulo.component';
+import { IngresoMaterialComponent } from './pages/ingreso-material/ingreso-material.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MovimientoMaterialComponent } from './pages/movimiento-material/movimiento-material.component';
+import { ReporteMaterialComponent } from './pages/reporte-material/reporte-material.component';
 
-import { SalidaArticuloComponent } from './pages/salida-articulo/salida-articulo.component';
-import { TrasladoArticuloComponent } from './pages/traslado-articulo/traslado-articulo.component';
+import { SalidaMaterialComponent } from './pages/salida-material/salida-material.component';
+import { TrasladoMaterialComponent } from './pages/traslado-material/traslado-material.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 
@@ -18,13 +20,15 @@ const routes: Routes = [
     //LOGIN   
 
   {path:'psg',component:LoginComponent},
-  {path:'ingreso-articulos',component:IngresoArticuloComponent,canActivate:[LoginGuard]},
-    {path:'salida-articulos',component:SalidaArticuloComponent,canActivate:[LoginGuard]},
-    {path:'traslado-articulos',component:TrasladoArticuloComponent,canActivate:[LoginGuard]},
+  {path:'ingreso-materiales',component:IngresoMaterialComponent,canActivate:[LoginGuard]},
+    {path:'salida-materiales',component:SalidaMaterialComponent,canActivate:[LoginGuard]},
+    {path:'traslado-materiales',component:TrasladoMaterialComponent,canActivate:[LoginGuard]},
     {path:'usuarios',component:UsuariosComponent,canActivate:[LoginGuard]},
     {path:'cargos',component:CargosComponent,canActivate:[LoginGuard]},
     {path:'administracion-materiales',component:AdministracionMaterialesComponent,canActivate:[LoginGuard]},
     {path:'adiministracion-oficinas',component:AdministracionOficinasComponent,canActivate:[LoginGuard]},
+    {path:'movimientos',component:MovimientoMaterialComponent,canActivate:[LoginGuard]},
+    {path:'reportes',component:ReporteMaterialComponent,canActivate:[LoginGuard]},
   
   
   {path:'',pathMatch:'full',redirectTo:'psg'},
