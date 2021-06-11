@@ -79,10 +79,16 @@ export class AdministradorService {
   getOficina(){
     return this.http.get(`${this.url}MostrarOficinas.php`);
   }
+  seleccionarOficinaUsuario(id_oficina:number){
+    return this.http.get(`${this.url}SeleccionarOficinaUsuario.php?id_oficina=${id_oficina}`);
+  }
   seleccionarOficina(id_oficina:number){
     return this.http.get(`${this.url}SeleccionarOficina.php?id_oficina=${id_oficina}`);
   }
-
+  editarOficina(oficinas){
+    return this.http.post(`${this.url}EditarOficina.php`,JSON.stringify(oficinas));
+  }
+  
 
 
 }
