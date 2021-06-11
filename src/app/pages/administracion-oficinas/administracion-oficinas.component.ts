@@ -11,6 +11,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 export class AdministracionOficinasComponent implements OnInit {
 
   oficinas:Oficinas[];
+  oficina:Oficinas[];
 
   constructor(public administradorService:AdministradorService,private router:Router) { }
 
@@ -26,9 +27,10 @@ export class AdministracionOficinasComponent implements OnInit {
   }
   seleccionarOficina(id_oficina){
     this.administradorService.seleccionarOficina(id_oficina).subscribe((resp:Oficinas[])=>{
-      this.oficinas=resp;
+      console.log(resp);
+      this.oficina=resp;
     });
-    
+    this.oficina=[];
   }
 
 }

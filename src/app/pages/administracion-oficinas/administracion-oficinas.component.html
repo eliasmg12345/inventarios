@@ -41,7 +41,10 @@
                             <tbody>
                                 <tr *ngFor="let ofi of oficinas">
                                     <td>{{ofi.nombre_oficina}}</td>
-                                    <td><a (click)="seleccionarOficina(ofi.id_oficina)" class="btn btn-success" data-toggle="modal" data-taget=".seleccionarUsuario-modal-lg"><i class="fa fa-eye"></i></a></td>
+                                    <td>
+                                        <a (click)="seleccionarOficina(ofi.id_oficina);" class="btn btn-success"
+                                            data-toggle="modal" data-target=".selecOfi"><i
+                                                class="fa fa-eye"></i></a>
                                     <td>
                                         <a class="btn btn-warning" data-toggle="modal" ><i class="fa fa-edit"></i></a>
                                     </td>
@@ -72,7 +75,7 @@
         <div class="card">
             <div class="card-body">
                 <!-- sample modal content -->
-                <div class="modal fade seleccionarUsuario-modal-lg" tabindex="-1" role="dialog"
+                <div class="modal fade selecOfi" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
