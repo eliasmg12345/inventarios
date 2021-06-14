@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Oficinas } from 'src/app/interfaces/oficinas.interface';
 import { Usuarios } from 'src/app/interfaces/usuarios.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import Swal from 'sweetalert2/src/sweetalert2.js';
@@ -14,11 +15,14 @@ export class UsuariosComponent implements OnInit {
 
   usuarios:Usuarios[];
   usuario:any={};
+  oficinas:Oficinas[];
+
 
   constructor(public administradorService:AdministradorService,private router:Router) { }
 
   ngOnInit(): void {
     this.mostrarUsuarios();
+    this.mostrarOficinas();
   }
 
   mostrarUsuarios(){
@@ -55,10 +59,10 @@ export class UsuariosComponent implements OnInit {
 
           swalWithBootstrapButtons.fire(
             'Registrado!',
-            'Cargo registrado.',
+            'Usuario registrado.',
             'success'
           )
-          this.router.navigate(['usuarios']);
+          this.router.navigate(['/usuarios']);
           this.mostrarUsuarios();
         }
       });
@@ -73,7 +77,16 @@ export class UsuariosComponent implements OnInit {
           'error'
         )
       }
+      this.usuario={};
+
     })
   }
 
+
+  mostrarOficinas(){
+    this.administradorService.getOficina().subscribe((resp:Oficinas[])=>{
+      this.oficinas=resp;
+      console.log(this.oficinas);
+    });
+  }
 }

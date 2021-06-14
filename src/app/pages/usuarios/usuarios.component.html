@@ -93,7 +93,7 @@
                                         <div class="row p-t-8">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Nombre</label>
+                                                    <label class="control-label">Nombre </label>
                                                     <input type="text"  class="form-control" name="usuario.nombre_usuario" [(ngModel)]="usuario.nombre_usuario" placeholder="Nombre" >
                                                 </div>
                                             </div>
@@ -150,8 +150,8 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Oficina</label>
                                                     <select  class="form-control " name="usuario.id_oficina" [(ngModel)]="usuario.id_oficina">
-                                                        <option value="1"  class="form-control">Of 1</option>
-                                                        <option value="2" class="form-control">Of 2</option>
+                                                        <option *ngFor="let ofi of oficinas"   class="form-control" [value]="ofi.id_oficina" >{{ofi.nombre_oficina}}</option>
+                                                        
                                                     </select>
                                                 </div>
                                             </div>

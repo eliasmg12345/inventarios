@@ -21,7 +21,7 @@
         <!-- ============================================================== -->
 
         <div class="form-group row">
-            <button type="button" class=" btn btn-outline-primary">Agregar Oficina</button>
+            <button type="button" class=" btn btn-outline-primary" data-toggle="modal" data-target=".agregarOficina">Agregar Oficina</button>
         </div>
 
         <div class="row">
@@ -32,10 +32,11 @@
                             <thead>
                                 <tr>
                                     <th data-toggle="true"> Nombre</th>
-                                    <th data-toggle="true"> Usuario</th>
+                                    <th data-toggle="true"> Usuario(s)</th>
+                                    <th data-toggle="">Telefono</th>
                                     <th data-toggle="true"> Acciones</th>
                                     <th>Eliminar</th>
-
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,6 +45,8 @@
                                     <td>
                                         <a (click)="seleccionarOficinaUsuario(ofi.id_oficina);" class="btn btn-success"
                                             data-toggle="modal" data-target=".selecOfi"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                    <td>{{ofi.telefono_oficina}}</td>
                                     <td>
                                         <a (click)="seleccionarOficina(ofi.id_oficina)" class="btn btn-warning" data-toggle="modal" data-target=".selOficina"><i class="fa fa-edit"></i></a>
                                     </td>
@@ -65,6 +68,70 @@
 </div>
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
+
+
+
+<!-- Modal para AGREGAR OFICINA -->
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <!-- sample modal content -->
+                <div class="modal fade agregarOficina " tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">Agregar Oficina</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="card">
+                                <form>
+                                    <div class="card-body">
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Nombre de Oficina</label>
+                                                        <input type="text" class="form-control"
+                                                            name="OficinaAgregar.nombre_oficina" [(ngModel)]="oficinaAgregar.nombre_oficina"
+                                                            placeholder="Nombre de oficina">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Telefono</label>
+                                                        <input type="text" class="form-control"
+                                                            name="oficinaAgregar.telefono_oficina" [(ngModel)]="oficinaAgregar.telefono_oficina"
+                                                            placeholder="Telefono de oficina">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-actions">
+                                            <button (click)="agregarOficina()" class="btn btn-success"> <i
+                                                    class="fa fa-check"></i> Agregar </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <!-- ======================SELECCIONAR USUARIO======================================== -->
@@ -166,7 +233,14 @@
                                                             placeholder="Nombre de oficina">
                                                     </div>
                                                 </div>
-
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Telefono</label>
+                                                        <input type="text" class="form-control"
+                                                            name="selOficina.telefono_oficina" [(ngModel)]="selOficina.telefono_oficina"
+                                                            placeholder="Telefono de oficina">
+                                                    </div>
+                                                </div>
 
                                             </div>
 

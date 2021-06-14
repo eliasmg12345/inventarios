@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginGuard } from './login.guard';
 import { AdministracionMaterialesComponent } from './pages/administracion-materiales/administracion-materiales.component';
 import { AdministracionOficinasComponent } from './pages/administracion-oficinas/administracion-oficinas.component';
+import { AlmacenMaterialComponent } from './pages/almacen-material/almacen-material.component';
 import { CargosComponent } from './pages/cargos/cargos.component';
 
 import { IngresoMaterialComponent } from './pages/ingreso-material/ingreso-material.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MovimientoMaterialComponent } from './pages/movimiento-material/movimiento-material.component';
-import { ReporteMaterialComponent } from './pages/reporte-material/reporte-material.component';
 
 import { SalidaMaterialComponent } from './pages/salida-material/salida-material.component';
 import { TrasladoMaterialComponent } from './pages/traslado-material/traslado-material.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
     {path:'administracion-materiales',component:AdministracionMaterialesComponent,canActivate:[LoginGuard]},
     {path:'adiministracion-oficinas',component:AdministracionOficinasComponent,canActivate:[LoginGuard]},
     {path:'movimientos',component:MovimientoMaterialComponent,canActivate:[LoginGuard]},
-    {path:'reportes',component:ReporteMaterialComponent,canActivate:[LoginGuard]},
+    {path:'almacen',component:AlmacenMaterialComponent,canActivate:[LoginGuard]},
   
   
   {path:'',pathMatch:'full',redirectTo:'psg'},

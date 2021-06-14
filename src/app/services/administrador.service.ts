@@ -56,11 +56,17 @@ export class AdministradorService {
   getMaterial(){
     return this.http.get(`${this.url}MostrarMateriales.php`);
   }
-  agregarMaterial(material){
-    return this.http.post(`${this.url}AgregarMaterial.php`,JSON.stringify(material));
+  seleccionarMaterial(id_material:number){
+    return this.http.get(`${this.url}SeleccionarMaterial.php?id_material=${id_material}`);
+  }
+  editarMaterial(materiales){
+    return this.http.post(`${this.url}EditarMaterial.php`,JSON.stringify(materiales));
   }
   eliminarMaterial(id_material){
     return this.http.get(`${this.url}EliminarMaterial.php?id_material=${id_material}`);
+  }
+  agregarMaterial(material){
+    return this.http.post(`${this.url}AgregarMaterial.php`,JSON.stringify(material));
   }
 
   // USUARIOS
@@ -72,7 +78,6 @@ export class AdministradorService {
   agregarUsuario(usuario){
     return this.http.post(`${this.url}AgregarUsuario.php`,JSON.stringify(usuario));
   }
-
 
   // OFICINAS
 
@@ -88,7 +93,13 @@ export class AdministradorService {
   editarOficina(oficinas){
     return this.http.post(`${this.url}EditarOficina.php`,JSON.stringify(oficinas));
   }
-  
+  agregarOficina(oficina){
+    return this.http.post(`${this.url}AgregarOficina.php`,JSON.stringify(oficina));
+  }
 
+  //ALMACEN
+  getAlmacen(){
+    return this.http.get(`${this.url}MostrarAlmacen.php`);
+  }
 
 }

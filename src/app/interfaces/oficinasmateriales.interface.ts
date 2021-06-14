@@ -1,4 +1,6 @@
-export class Materiales{
+export class Om{
+    id_oficina:number;
+    nombre_oficina:string;
     nombre_material:string;
     id_tipo:number;
     fecha_compra:string;

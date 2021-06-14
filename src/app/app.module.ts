@@ -21,8 +21,8 @@ import { AdministracionMaterialesComponent } from './pages/administracion-materi
 import { IngresoMaterialComponent } from './pages/ingreso-material/ingreso-material.component';
 import { SalidaMaterialComponent } from './pages/salida-material/salida-material.component';
 import { TrasladoMaterialComponent } from './pages/traslado-material/traslado-material.component';
-import { ReporteMaterialComponent } from './pages/reporte-material/reporte-material.component';
 import { MovimientoMaterialComponent } from './pages/movimiento-material/movimiento-material.component';
+import { AlmacenMaterialComponent } from './pages/almacen-material/almacen-material.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,8 @@ import { MovimientoMaterialComponent } from './pages/movimiento-material/movimie
     IngresoMaterialComponent,
     SalidaMaterialComponent,
     TrasladoMaterialComponent,
-    ReporteMaterialComponent,
     MovimientoMaterialComponent,
+    AlmacenMaterialComponent,
   ],
   imports: [
     BrowserModule,

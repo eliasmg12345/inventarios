@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Materiales } from 'src/app/interfaces/materiales.intercafe';
+import { Oficinas } from 'src/app/interfaces/oficinas.interface';
+import { Usuarios } from 'src/app/interfaces/usuarios.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
@@ -14,6 +16,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 export class AdministracionMaterialesComponent implements OnInit {
 
   material:any={};
+  materialAgregar:any={};
   materiales:Materiales[];
   caracteristica:any={};
 
@@ -34,8 +37,24 @@ export class AdministracionMaterialesComponent implements OnInit {
     console.log(mat);
     this.caracteristica=mat;
   }
+  seleccionarMaterial(id_material){
+    this.administradorService.seleccionarMaterial(id_material).subscribe((resp)=>{
+      this.material=resp[0];
+      console.log(this.material);
+    })
+  }
+  editarMaterial(){
+    this.administradorService.editarMaterial(this.material).subscribe((resp)=>{
+      if(resp['resultado']=='OK'){
+        Swal.fire({
+          icon:'success',title:'Editado Correctamente',showConfirmButton:false,timer:2000
+        })
+        this.mostrarMateriales();
+      }
+    });
+  }
   agregarMaterial(){
-    
+
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -55,9 +74,9 @@ export class AdministracionMaterialesComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this.administradorService.agregarMaterial(this.material).subscribe(resp=>{
+        this.administradorService.agregarMaterial(this.materialAgregar).subscribe(resp=>{
+          
           if(resp['resultado']==='OK'){
-
 
 
           swalWithBootstrapButtons.fire(
@@ -67,10 +86,9 @@ export class AdministracionMaterialesComponent implements OnInit {
           )
           this.mostrarMateriales();
           this.router.navigate(['administracion-materiales']);
+
         }
       });
-      this.material=[];
-
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
@@ -81,8 +99,9 @@ export class AdministracionMaterialesComponent implements OnInit {
           'error'
         )
       }
+      this.materialAgregar={};
     })
-
+    
   }
 
 
@@ -131,5 +150,6 @@ export class AdministracionMaterialesComponent implements OnInit {
       }
     })
   }
+
 
 }

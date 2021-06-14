@@ -90,8 +90,8 @@ export class CargosComponent implements OnInit {
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Desea Eliminar el paciente?',
-      text: "You won't be able to revert this!",
+      title: 'Desea Eliminar Permiso?',
+      text: "Eliminara el permiso que contiene el cargo",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Aceptar!',
@@ -133,19 +133,15 @@ export class CargosComponent implements OnInit {
       console.log(this.cargo);
     });
   }
-
   editarCargo(){
     this.administradorService.editarCargo(this.cargo).subscribe((resp)=>{
       if(resp['resultado']=='OK'){
-
-
         Swal.fire({
           icon: 'success',
           title: 'EDITADO CORRECTAMENTE',
           showConfirmButton: false,
           timer: 2500
         })
-
         this.mostrarCargos();
       }
     });
@@ -166,7 +162,7 @@ export class CargosComponent implements OnInit {
     
     swalWithBootstrapButtons.fire({
       title: 'Desea registrar?',
-      text: "You won't be able to revert this!",
+      text: "Se agregara nuevo cargo",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Aceptar!',
