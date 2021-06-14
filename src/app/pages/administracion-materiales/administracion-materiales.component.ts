@@ -41,7 +41,7 @@ export class AdministracionMaterialesComponent implements OnInit {
     this.administradorService.seleccionarMaterial(id_material).subscribe((resp)=>{
       this.material=resp[0];
       console.log(this.material);
-    })
+    });
   }
   editarMaterial(){
     this.administradorService.editarMaterial(this.material).subscribe((resp)=>{

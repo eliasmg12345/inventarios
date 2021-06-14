@@ -29,14 +29,18 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Oficina Origen</label>
-                                        <input type="text" class="form-control" placeholder="Oficina origen">
+                                        <select name="oficinaOrigen.id_oficina" [(ngModel)]="oficinaOrigen.id_oficina" id="" class="form-control">
+                                            <option *ngFor="let ofiAlmacen of almacenes" [value]="ofiAlmacen.id_oficina" class="form-control" (onChange)="mostrar(ofiAlmacen.id_oficina)">{{ofiAlmacen.nombre_oficina}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Oficina Destino</label>
-                                        <input type="text" class="form-control" placeholder="Oficina destino">
+                                        <select name="oficinaDestino.id_oficina" [(ngModel)]="oficinaDestino.id_oficina" id="" class="form-control">
+                                            <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control" >{{ofi.nombre_oficina}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->
@@ -46,7 +50,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Material</label>
-                                        <input type="text" class="form-control" placeholder="Activo Fijo">
+                                        <select name="materialSeleccionado.id_material" [(ngModel)]="materialSeleccionado.id_material" id="" class="form-control">
+                                            <option *ngFor="let matAlmacen of almacenes" [value]="matAlmacen.id_material" class="form-control">{{matAlmacen.nombre_material}}</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!--/span-->

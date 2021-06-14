@@ -74,7 +74,15 @@ export class AdministradorService {
   getUsuario(){
     return this.http.get(`${this.url}MostrarUsuarios.php`);      
   }
-
+  seleccionarUsario(id_usuario){
+    return this.http.get(`${this.url}SeleccionarUsuario.php?id_usuario=${id_usuario}`);
+  }
+  editarUsuario(usuarios){
+    return this.http.post(`${this.url}EditarUsuario.php`,JSON.stringify(usuarios));
+  }
+  eliminarUsuario(id_usuario){
+    return this.http.get(`${this.url}EliminarUsuario.php?id_usuario=${id_usuario}`);
+  }
   agregarUsuario(usuario){
     return this.http.post(`${this.url}AgregarUsuario.php`,JSON.stringify(usuario));
   }
