@@ -109,5 +109,13 @@ export class AdministradorService {
   getAlmacen(){
     return this.http.get(`${this.url}MostrarAlmacen.php`);
   }
+  seleccionarOficinaAlmacen(id_oficina){
+    return this.http.get(`${this.url}SeleccionarOficinaAlmacen.php?id_oficina=${id_oficina}`);
+  }
+
+  //TRASLADO
+  trasladarMaterial(movimiento){
+    return this.http.post(`${this.url}TrasladarMaterial.php`,JSON.stringify(movimiento));
+  }
 
 }
