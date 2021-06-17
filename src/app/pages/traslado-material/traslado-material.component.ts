@@ -81,7 +81,7 @@ export class TrasladoMaterialComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this.administradorService.trasladarMaterial(this.trasladoMaterial).subscribe(resp=>{
+        this.administradorService.trasladarMaterial(this.trasladoMaterial).subscribe((resp)=>{
           
           if(resp['resultado']==='OK'){
 
