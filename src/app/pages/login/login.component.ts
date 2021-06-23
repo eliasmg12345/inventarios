@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         console.log(datos['mensaje']);
         console.log('sd');
       }
-    })
+    });
 
   }
 
