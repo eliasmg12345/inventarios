@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginServiceService } from '../../services/login-service.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/src/sweetalert2.js';
+import { Usuarios } from 'src/app/interfaces/usuarios.interface';
 
 
 @Component({
@@ -11,10 +12,8 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 })
 export class LoginComponent implements OnInit {
 
-  login = {
-    usuario: null,
-    password: null
-  }
+  // login = {usuario: null,password: null}
+  login :any={};
 
 
   constructor(private loginService: LoginServiceService, private router: Router) { }

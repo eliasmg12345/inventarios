@@ -1,3 +1,5 @@
+export type Roles = 'SUSCRIPTOR' | 'ADMIN';
+
 export class Usuarios{
     
 ​​apellido_usuario:string;
@@ -12,3 +14,9 @@ nombre_usuario:string;
 password: string;
 telefono_usuario: string;
 }
+export interface UserResponse extends Usuarios{
+    message: string;
+    token: string;
+    userId: number;
+    role: Roles;
+  }
