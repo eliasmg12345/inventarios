@@ -36,7 +36,7 @@ export class TrasladoMaterialComponent implements OnInit {
       this.oficinas=resp;
       console.log(this.oficinas);
     });
-  }
+  } 
   mostrarAlmacen(){
     this.administradorService.getAlmacen().subscribe((resp:Om[])=>{
       this.almacenes=resp;

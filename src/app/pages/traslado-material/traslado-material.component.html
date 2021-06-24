@@ -29,7 +29,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Oficina Origen</label>
-                                        <select name="trasladoMaterial.id_oficinaSalida" [(ngModel)]="trasladoMaterial.id_oficinaSalida" id="" class="form-control">
+                                        <select name="trasladoMaterial.id_salida" [(ngModel)]="trasladoMaterial.id_salida" id="" class="form-control">
                                             <option *ngFor="let ofiAlmacen of oficinas" [value]="ofiAlmacen.id_oficina" class="form-control" (click)="seleccionarOficinaAlmacen(ofiAlmacen.id_oficina)">{{ofiAlmacen.nombre_oficina}}</option>
                                         </select>
                                     </div>
@@ -38,7 +38,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Oficina Destino</label>
-                                        <select name="trasladoMaterial.id_oficinaEntrada" [(ngModel)]="trasladoMaterial.id_oficinaEntrada" id="" class="form-control">
+                                        <select name="trasladoMaterial.id_entrada" [(ngModel)]="trasladoMaterial.id_entrada" id="" class="form-control">
                                             <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control" >{{ofi.nombre_oficina}}</option>
                                         </select>
                                     </div>
