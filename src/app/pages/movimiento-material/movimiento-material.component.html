@@ -31,31 +31,26 @@
                         <table id="demo-foo-accordion" class="table m-b-0 toggle-arrow-tiny">
                             <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
+                                    <th>Fecha Mov</th>
+                                    <th>Tipo Mov</th>
+                                    <th>Origen</th>
+                                    <th>Destino</th>
+                                    <th>Material</th>
+                                    <th>Cantidad</th>
                                     <th>Descripcion</th>
-                                    <th>Fecha de Compra</th>
-                                    <th>Tipo</th>
-                                    <th>Oficina</th>
-                                    <th>Caracteristicas</th>
                                     
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr  >
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a   class="btn btn-success" 
-                                            data-toggle="modal" data-target=".modaldetalle"><i
-                                                class="fa fa-eye"
-                                                ></i></a>
-                                    </td>
+                                <tr  *ngFor="let mov of movimientos">
+                                    <td>{{mov.fecha_movimiento}}</td>
+                                    <td>{{mov.tipo_movimiento}}</td>
+                                    <td>{{mov.id_entrada}}</td>
+                                    <td>{{mov.nombre_oficina}}</td>
+                                    <td>{{mov.nombre_material}}</td>
+                                    <td>{{mov.cantidad}}</td>
+                                    <td>{{mov.motivo_movimiento}}</td>
                                    
                                     
                                 </tr>

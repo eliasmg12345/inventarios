@@ -118,4 +118,9 @@ export class AdministradorService {
     return this.http.post(`${this.url}TrasladarMaterial.php`,JSON.stringify(movimiento));
   }
 
+  //MOVIMIENTO
+  getMovimiento(){
+    return this.http.get(`${this.url}MostrarMovimiento.php`);
+  }
+
 }

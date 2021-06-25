@@ -53,13 +53,13 @@
                                         <select name="trasladoMaterial.id_material" [(ngModel)]="trasladoMaterial.id_material" id="" class="form-control">
                                             <option *ngFor="let matAlmacen of oficinaAlmacen" [value]="matAlmacen.id_material" class="form-control" (click)="onChangeCantidad(matAlmacen.id_material)">{{matAlmacen.nombre_material}}</option>
                                         </select>
-                                        {{cantidadMaterial.cantidad}}
+                                        
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Cantidad</label>
+                                        <label class="control-label">Cantidad Traslado</label>
                                         <input name="trasladoMaterial.cantidad" [(ngModel)]="trasladoMaterial.cantidad" type="text" class="form-control" placeholder="123">
                                         
                                     </div>
@@ -71,19 +71,28 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Descripcion Movimiento</label>
-                                        <textarea  name="trasladoMaterial.motivo_movimiento" [(ngModel)]="trasladoMaterial.motivo_movimiento" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                        <label >Existencia:  {{cantidadMaterial.cantidad}}</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tipo Movimiento</label>
+                                        <select name="trasladoMaterial.tipo_movimiento" [(ngModel)]="trasladoMaterial.tipo_movimiento" id="" class="form-control">
+                                            <option  value="ingreso" class="form-control" >Ingreso</option>
+                                            <option  value="traslado" class="form-control" >Traslado</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Tipo Movimiento</label>
-                                        <input type="text" name="" id="" name="trasladoMaterial.tipo_movimiento" [(ngModel)]="trasladoMaterial.tipo_movimiento" class="form-control"> 
+                                        <label>Descripcion Movimiento</label>
+                                        <textarea  name="trasladoMaterial.motivo_movimiento" [(ngModel)]="trasladoMaterial.motivo_movimiento" class="form-control" name="" id="" cols="2" rows="2"></textarea>
                                     </div>
                                 </div>
-                                <!--/span-->
-
-                                <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
