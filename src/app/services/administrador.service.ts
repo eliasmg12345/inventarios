@@ -109,7 +109,7 @@ export class AdministradorService {
   getAlmacen(){
     return this.http.get(`${this.url}MostrarAlmacen.php`);
   }
-  seleccionarOficinaAlmacen(id_oficina){
+  seleccionarOficinaAlmacen(id_oficina:number){
     return this.http.get(`${this.url}SeleccionarOficinaAlmacen.php?id_oficina=${id_oficina}`);
   }
 

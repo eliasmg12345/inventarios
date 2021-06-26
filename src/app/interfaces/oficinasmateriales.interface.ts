@@ -8,4 +8,7 @@ export class Om{
     descripcion_material:string;
     caracteristicas:string;
     id_material:number;
+    cantidad:number;
+    fecha:number;
+        
 }

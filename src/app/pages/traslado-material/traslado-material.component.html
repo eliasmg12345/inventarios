@@ -30,7 +30,7 @@
                                     <div class="form-group">
                                         <label class="control-label">Oficina Origen</label>
                                         <select name="trasladoMaterial.id_salida" [(ngModel)]="trasladoMaterial.id_salida" id="" class="form-control">
-                                            <option *ngFor="let ofiAlmacen of oficinas" [value]="ofiAlmacen.id_oficina" class="form-control" (click)="seleccionarOficinaAlmacen(ofiAlmacen.id_oficina)">{{ofiAlmacen.nombre_oficina}}</option>
+                                            <option  *ngFor="let ofi of oficinas" [value]="ofi.id_oficina"  class="form-control" (click)=seleccionarOficinaAlmacen(ofi.id_oficina)>{{ofi.id_oficina}}  {{ofi.nombre_oficina}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label class="control-label">Oficina Destino</label>
                                         <select name="trasladoMaterial.id_entrada" [(ngModel)]="trasladoMaterial.id_entrada" id="" class="form-control">
-                                            <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control" >{{ofi.nombre_oficina}}</option>
+                                            <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control">{{ofi.nombre_oficina}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Material</label>
+                                        <label class="control-label">Material</label>
                                         <select name="trasladoMaterial.id_material" [(ngModel)]="trasladoMaterial.id_material" id="" class="form-control">
                                             <option *ngFor="let matAlmacen of oficinaAlmacen" [value]="matAlmacen.id_material" class="form-control" (click)="onChangeCantidad(matAlmacen.id_material)">{{matAlmacen.nombre_material}}</option>
                                         </select>

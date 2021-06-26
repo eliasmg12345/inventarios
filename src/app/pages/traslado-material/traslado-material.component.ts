@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Materiales } from 'src/app/interfaces/materiales.intercafe';
 import { Oficinas } from 'src/app/interfaces/oficinas.interface';
 import { Om } from 'src/app/interfaces/oficinasmateriales.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
@@ -43,7 +42,8 @@ export class TrasladoMaterialComponent implements OnInit {
       console.log(this.almacenes);
     })
   }
-  seleccionarOficinaAlmacen(id_oficina){
+  seleccionarOficinaAlmacen(id_oficina:number){
+    
     this.administradorService.seleccionarOficinaAlmacen(id_oficina).subscribe((resp:Om[])=>{
       this.oficinaAlmacen=resp;
       console.log(this.oficinaAlmacen);
