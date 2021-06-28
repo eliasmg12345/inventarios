@@ -123,4 +123,9 @@ export class AdministradorService {
     return this.http.get(`${this.url}MostrarMovimiento.php`);
   }
 
+  // INGRESO
+  ingresoMaterial(ingreso){
+    return this.http.post(`${this.url}IngresoMaterial.php`,JSON.stringify(ingreso));
+  }
+
 }

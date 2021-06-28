@@ -10,7 +10,6 @@
             <div class="col-md-5 align-self-center">
                 <h3 class="text-themecolor">Movimiento de Materiales</h3>
             </div>
-
         </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
@@ -33,8 +32,8 @@
                                 <tr>
                                     <th>Fecha Mov</th>
                                     <th>Tipo Mov</th>
-                                    <th>Origen</th>
-                                    <th>Destino</th>
+                                    <th>id_of_Origen</th>
+                                    <th>Oficina Destino</th>
                                     <th>Material</th>
                                     <th>Cantidad</th>
                                     <th>Descripcion</th>
@@ -43,10 +42,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr  *ngFor="let mov of movimientos">
+                                
+                                <tr  *ngFor="let mov of movimientos ">
                                     <td>{{mov.fecha_movimiento}}</td>
                                     <td>{{mov.tipo_movimiento}}</td>
-                                    <td>{{mov.id_entrada}}</td>
+                                    <td>{{mov.id_origen}}</td>
                                     <td>{{mov.nombre_oficina}}</td>
                                     <td>{{mov.nombre_material}}</td>
                                     <td>{{mov.cantidad}}</td>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movimientos } from 'src/app/interfaces/movimientos.interface';
+import { Oficinas } from 'src/app/interfaces/oficinas.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
 
 @Component({
@@ -9,19 +10,31 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class MovimientoMaterialComponent implements OnInit {
 
+  oficinas:Oficinas[];
   movimientos:Movimientos[];
+  nMov:[];
 
   constructor(public administradorService:AdministradorService) { }
 
   ngOnInit(): void {
+    this.mostrarOficinas();
     this.mostrarMovimiento();
+  }
+  mostrarOficinas(){
+    this.administradorService.getOficina().subscribe((resp:Oficinas[])=>{
+      this.oficinas=resp;
+      console.log(this.oficinas);
+    });
   }
 
   mostrarMovimiento(){
     this.administradorService.getMovimiento().subscribe((resp:Movimientos[])=>{
+      
       this.movimientos=resp;
+
       console.log(this.movimientos);
-    })
+
+    });
   }
 
 }
