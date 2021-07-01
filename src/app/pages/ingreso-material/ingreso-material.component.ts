@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Materiales } from 'src/app/interfaces/materiales.intercafe';
 import { Oficinas } from 'src/app/interfaces/oficinas.interface';
+import { Om } from 'src/app/interfaces/oficinasmateriales.interface';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import Swal from 'sweetalert2';
 
@@ -14,6 +15,9 @@ export class IngresoMaterialComponent implements OnInit {
 
   oficinas:Oficinas[];
   materiales:Materiales[];
+  almacenes:Om[];
+  oficinaAlmacen:Om[];
+  cantidadMaterial:any={};
   ingresoMaterial:any={};
 
   constructor(private administradorService:AdministradorService,private router:Router) { }
@@ -21,6 +25,7 @@ export class IngresoMaterialComponent implements OnInit {
   ngOnInit(): void {
     this.mostrarOficinas();
     this.mostrarMateriales();
+    this.mostrarAlmacen();
 
   }
   mostrarOficinas(){
@@ -35,8 +40,27 @@ export class IngresoMaterialComponent implements OnInit {
       console.log(this.materiales);
     });
   }
+  mostrarAlmacen(){
+    this.administradorService.getAlmacen().subscribe((resp:Om[])=>{
+      this.almacenes=resp;
+      console.log(this.almacenes);
+    })
+  }
+  seleccionarOficinaAlmacen(id_oficina){
+    this.administradorService.seleccionarOficinaAlmacen(id_oficina).subscribe((resp:Om[])=>{
+      this.oficinaAlmacen=resp;
+      console.log(this.oficinaAlmacen);
+    });
+    this.oficinaAlmacen=[];
+  }
+  mostrarCantidad(id_material){
+    let material=this.oficinaAlmacen.filter((mat)=>mat.id_material==id_material)[0];
+    // let material=this.oficinaAlmacen.filter((material)=>material.id_material==cantidad);\
+    this.cantidadMaterial=material.cantidad;
+    console.log(material.cantidad);
+  }
 
-  trasladarMaterial(){
+  ingresarMaterial(){
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -46,8 +70,8 @@ export class IngresoMaterialComponent implements OnInit {
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Desea registrar?',
-      text: "You won't be able to revert this!",
+      title: 'Desea Agregar?',
+      text: "No se podra revertir el proceso!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Aceptar!',
@@ -70,7 +94,7 @@ export class IngresoMaterialComponent implements OnInit {
 
         }else{
           swalWithBootstrapButtons.fire(
-            'YA EXISTE EL MATERIAL',
+            '-----',
             'xxxx',
             'error'
           )

@@ -31,7 +31,7 @@
                                     <div class="form-group">
                                         <label class="control-label">Oficina Destino</label>
                                         <select name="ingresoMaterial.id_oficina" [(ngModel)]="ingresoMaterial.id_oficina" id="" class="form-control">
-                                            <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control" >{{ofi.nombre_oficina}}</option>
+                                            <option *ngFor="let ofi of oficinas" [value]="ofi.id_oficina" class="form-control" (click)="seleccionarOficinaAlmacen(ofi.id_oficina)">{{ofi.nombre_oficina}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -40,11 +40,18 @@
                                     <div class="form-group">
                                         <label>Material</label>
                                         <select name="ingresoMaterial.id_material" [(ngModel)]="ingresoMaterial.id_material" id="" class="form-control">
-                                            <option *ngFor="let mat of materiales" [value]="mat.id_material" class="form-control" >{{mat.nombre_material}}</option>
+                                            <option *ngFor="let mat of materiales" [value]="mat.id_material" class="form-control" (click)="mostrarCantidad(mat.id_material)">{{mat.nombre_material}}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label >Existencia:  {{cantidadMaterial}}</label>
+                                    </div>
+                                </div>
                             </div>
                             <!--/row-->
                             <div class="row">
@@ -66,7 +73,7 @@
                             <!--/row-->
                         </div>
                         <div class="form-actions">
-                            <button class="btn btn-success" (click)="trasladarMaterial()"> <i class="fa fa-check"></i> Guardar </button>
+                            <button class="btn btn-success" (click)="ingresarMaterial()"> <i class="fa fa-check"></i> Agregar </button>
                         </div>
                     </div>
                 </div>
