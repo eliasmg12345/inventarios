@@ -55,9 +55,8 @@ export class IngresoMaterialComponent implements OnInit {
   }
   mostrarCantidad(id_material){
     let material=this.oficinaAlmacen.filter((mat)=>mat.id_material==id_material)[0];
-    // let material=this.oficinaAlmacen.filter((material)=>material.id_material==cantidad);\
-    this.cantidadMaterial=material.cantidad;
-    console.log(material.cantidad);
+    this.cantidadMaterial=material;
+    console.log(this.cantidadMaterial.cantidad);
   }
 
   ingresarMaterial(){
