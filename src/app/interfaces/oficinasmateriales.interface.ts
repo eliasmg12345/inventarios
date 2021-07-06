@@ -9,7 +9,7 @@ export class Om{
     caracteristicas:string;
     id_material:number;
     cantidad:number;
-    constructor(pid_oficina=0,
+    constructor(pid_oficina=0, 
                 pnombre_oficina='',
                 pnombre_material='',      
                 pid_tipo=0,
